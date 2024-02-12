@@ -15,25 +15,25 @@ import { Button } from "../ui/button";
 export default function Hero() {
   const data = [
     {
-      imageUrl: "/images/hero/1.png",
+      imageUrl: "/images/hero/1.webp",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.png",
+      imageUrl: "/images/hero/1.webp",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.png",
+      imageUrl: "/images/hero/1.webp",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.png",
+      imageUrl: "/images/hero/1.webp",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",

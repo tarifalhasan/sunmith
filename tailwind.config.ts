@@ -35,8 +35,8 @@ const config = {
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsla(var(--destructive))",
+          foreground: "hsla(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -56,7 +56,10 @@ const config = {
         },
         skin: {
           "neutral-600": "#333333",
+          "neutral-700": "#636363",
+          "neutral-300": "#9A9A9A",
           "status-600": "#F35555",
+          "status-700": "#F5222D",
         },
       },
       borderRadius: {
@@ -80,6 +83,7 @@ const config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        nato_sans: ["var(--nato-sans)", ...fontFamily.sans],
       },
     },
   },

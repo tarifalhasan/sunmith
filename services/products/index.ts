@@ -1,11 +1,6 @@
 export const getProducts = async () => {
   try {
-    const res = await fetch(
-      `${process.env.API_URL}/api/products`
-      // {
-      //   cache: "no-store",
-      // }
-    );
+    const res = await fetch(`${process.env.API_URL}/api/products`);
 
     if (!res.ok) {
       throw new Error("Failed to fetch products");

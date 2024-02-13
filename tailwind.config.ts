@@ -20,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        b2b: "url('/images/b2b_bg.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

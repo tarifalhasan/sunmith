@@ -56,6 +56,7 @@ const config = {
         },
         skin: {
           "neutral-600": "#333333",
+          "neutral-200": "#FAFAFA",
           "neutral-700": "#636363",
           "neutral-300": "#9A9A9A",
           "status-600": "#F35555",

@@ -4,6 +4,7 @@ import Hero from "@/components/Landing/Hero";
 import OurProducts from "@/components/Landing/OurProducts";
 import OurServices from "@/components/Landing/OurServices";
 import Products from "@/components/Landing/Products";
+import ServeSection from "@/components/Landing/ServeSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <OurServices />
       <B2B />
       <Products />
+      <ServeSection />
     </>
   );
 }

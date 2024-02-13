@@ -1,7 +1,7 @@
 export const getProducts = async () => {
   try {
     const res = await fetch(
-      "http://localhost:3000/api/products"
+      `${process.env.API_URL}/api/products`
       // {
       //   cache: "no-store",
       // }

@@ -15,25 +15,25 @@ import { Button } from "../ui/button";
 export default function Hero() {
   const data = [
     {
-      imageUrl: "/images/hero/1.webp",
+      imageUrl: "/images/hero/1.png",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.webp",
+      imageUrl: "/images/hero/1.png",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.webp",
+      imageUrl: "/images/hero/1.png",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
     },
     {
-      imageUrl: "/images/hero/1.webp",
+      imageUrl: "/images/hero/1.png",
       title: "SUNMI OFFICIAL THAILAND",
       description:
         "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
@@ -55,11 +55,10 @@ export default function Hero() {
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <div
+              className="lg:min-h-[99vh] bg-cover bg- bg-no-repeat"
               style={{
                 backgroundImage: `url('${item.imageUrl}')`,
-                backgroundSize: "100% 100%",
               }}
-              className="lg:min-h-[99vh] bg-no-repeat"
             >
               <div className="container relative mx-auto py-28 md:py-48 px-4 w-full left-0 top-0">
                 <div className="space-y-7">

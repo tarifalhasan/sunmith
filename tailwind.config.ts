@@ -22,6 +22,7 @@ const config = {
     extend: {
       backgroundImage: {
         b2b: "url('/images/b2b_bg.png')",
+        p_bg_lg: "url('/images/product_bg_lg.png')",
       },
       colors: {
         border: "hsl(var(--border))",

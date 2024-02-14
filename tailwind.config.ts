@@ -64,6 +64,7 @@ const config = {
           "neutral-300": "#9A9A9A",
           "status-600": "#F35555",
           "status-700": "#F5222D",
+          "orange-200": "#FAF3EA",
         },
       },
       borderRadius: {

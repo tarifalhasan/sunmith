@@ -14,7 +14,7 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
@@ -90,6 +90,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         nato_sans: ["var(--nato-sans)", ...fontFamily.sans],
+        roboto: ["var(--roboto)", ...fontFamily.sans],
       },
     },
   },

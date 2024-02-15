@@ -15,7 +15,7 @@ const OurServices = () => {
       des: "",
     },
     {
-      id: 1,
+      id: 3,
       icon: "/images/products/customars2.svg",
       title: "Total Customer",
       des: "",

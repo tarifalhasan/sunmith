@@ -34,7 +34,7 @@ const Categorys = () => {
       link: "/",
     },
     {
-      id: 1,
+      id: 6,
       icon: "/images/categories/food.svg",
       title: "Cloud Kitchen",
       link: "/",

@@ -71,13 +71,15 @@ const MainHeader = () => {
   const onLanguagesChanges = (value: string) => {
     setLanguage(value);
   };
+
   return (
     <header
       className={cn(
-        !header
+        !header || nav
           ? " bg-transparent py-4 shadow-none  "
-          : " shadow-none border-b backdrop-blur-sm bg-white/[0.6] dark:bg-black/[0.6] border-neutral-200 border-white/[0.1] ",
-        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300"
+          : " shadow-none border-b backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6] border-neutral-200 border-white/[0.1] ",
+        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300",
+        nav && "bg-white/[0.9]"
       )}
     >
       <div className=" px-4 xl:container mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between">
@@ -177,9 +179,9 @@ const MainHeader = () => {
             onClick={() => setNav((prev) => !prev)}
           >
             {nav ? (
-              <IoClose className=" w-6 h-6 text-black dark:text-white/95 " />
+              <IoClose className=" w-6 h-6 text-primary dark:text-white/95 " />
             ) : (
-              <HiOutlineMenu className=" w-6 h-6 text-black dark:text-white/95 " />
+              <HiOutlineMenu className=" w-6 h-6 text-primary dark:text-white/95 " />
             )}
           </div>
         </div>

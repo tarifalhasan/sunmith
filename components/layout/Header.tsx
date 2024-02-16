@@ -156,7 +156,7 @@ const MainHeader = () => {
                 </SelectContent>
               </Select>
 
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger>
                   <Avatar>
                     <AvatarImage src="https://github.com/shadcn.png" />
@@ -171,7 +171,7 @@ const MainHeader = () => {
                   <DropdownMenuItem>Team</DropdownMenuItem>
                   <DropdownMenuItem>Logout</DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
+              </DropdownMenu> */}
             </div>
           </div>
           <div

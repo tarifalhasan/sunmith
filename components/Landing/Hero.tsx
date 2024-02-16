@@ -10,33 +10,14 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectFade, Pagination } from "swiper/modules";
-import { Button } from "../ui/button";
 
 export default function Hero() {
   const data = [
     {
-      imageUrl: "/images/hero/1.png",
-      title: "SUNMI OFFICIAL THAILAND",
-      description:
-        "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
+      imageUrl: "/images/hero/2.jpg",
     },
     {
-      imageUrl: "/images/hero/1.png",
-      title: "SUNMI OFFICIAL THAILAND",
-      description:
-        "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
-    },
-    {
-      imageUrl: "/images/hero/1.png",
-      title: "SUNMI OFFICIAL THAILAND",
-      description:
-        "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
-    },
-    {
-      imageUrl: "/images/hero/1.png",
-      title: "SUNMI OFFICIAL THAILAND",
-      description:
-        "SUNMI OFFICIAL เป็นผู้นำเข้าและจัดจำหน่ายสินค้า อย่างเป็นทางการของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ",
+      imageUrl: "/images/hero/3.jpg",
     },
   ];
 
@@ -55,12 +36,14 @@ export default function Hero() {
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <div
-              className="lg:min-h-[99vh] bg-cover bg- bg-no-repeat"
+              className="  relative overflow-hidden min-h-[150px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   pb-[30%] bg-no-repeat"
               style={{
                 backgroundImage: `url('${item.imageUrl}')`,
+                backgroundPosition: "100% 100%",
+                backgroundSize: "100% 100%",
               }}
             >
-              <div className="container relative mx-auto py-28 md:py-48 px-4 w-full left-0 top-0">
+              {/* <div className="container relative mx-auto py-28 md:py-48 px-4 w-full left-0 top-0">
                 <div className="space-y-7">
                   <h2 className="font-bold text-center font-sans lg:text-left text-2xl sm:text-4xl xl:text-5xl">
                     {item.title}
@@ -74,7 +57,7 @@ export default function Hero() {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         ))}

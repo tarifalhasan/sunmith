@@ -78,7 +78,7 @@ const MainHeader = () => {
         !header || nav
           ? " bg-transparent py-4 shadow-none  "
           : " shadow-none border-b backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6] border-neutral-200 border-white/[0.1] ",
-        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300",
+        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300 h-[81px]",
         nav && "bg-white/[0.9]"
       )}
     >

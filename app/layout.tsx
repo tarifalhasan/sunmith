@@ -40,7 +40,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <MainHeader />
-        {children}
+        <main className=" pt-[81px]">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const trnslate = useTranslations("footer");
   return (
     <footer className="  bg-[#F7F7F7] py-10">
       <div className=" container flex flex-col lg:flex-row gap-10 items-start justify-between">
@@ -48,7 +50,7 @@ const Footer = () => {
           <div>
             <div>
               <h2 className=" text-2xl font-sans font-semibold text-skin-neutral-600">
-                หัวข้อ
+                {trnslate("title1")}
               </h2>
             </div>
             <ul className=" pt-4 space-y-3">
@@ -105,7 +107,7 @@ const Footer = () => {
           <div>
             <div>
               <h2 className=" text-2xl font-sans font-semibold text-skin-neutral-600">
-                บริการ
+                {trnslate("title2")}
               </h2>
             </div>
             <ul className=" pt-4 space-y-3">
@@ -146,7 +148,7 @@ const Footer = () => {
           <div>
             <div>
               <h2 className=" text-2xl font-sans font-semibold text-skin-neutral-600">
-                ติดตามเรา
+                {trnslate("title3")}
               </h2>
             </div>
             <ul className=" pt-4 flex flex-col space-y-3">

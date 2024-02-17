@@ -7,20 +7,19 @@
     "description": "This is the home page."
   },
   "Category": {
-    "title": "Suitable for Business",
-    "description": "SUNMI's innovative products meet world-class standards. We have a variety of products to support every need. Whether it's a store or small restaurants to large businesses."
+    "title": "Suitable for Business"
   },
   "OurProducts": {
     "title": "Our Products",
-    "description": "SUNMI's innovative products meet world-class standards. We have a variety of products to support every need. Whether it's a store or small restaurants to large businesses."
+    "description": "SUNMI's innovative products meet global standards. We offer a variety of models to cater to every need, whether it's for small shops or restaurants, up to large-scale businesses"
   },
   "OurServices": {
-    "title": "Our Products",
-    "description": "SUNMI OFFICIAL THAILAND is the official importer and distributor of SUNMI brand products. We have a team of professionally trained experts. Give instructions for use and after-sales consulting services to solve product usage problems To help your business run smoothly. and provide the best service to our customers from all over the country."
+    "title": "Our Services",
+    "description": "SUNMI TH provides post-sales service with dedicated staff available 24 hours a day to assist store owners. We offer information, guidance on device usage, and comprehensive management support. Our service includes service centers, on-the-go repairs, and remote assistance, allowing immediate access to the device's interface as if our staff were present, enabling quick problem-solving."
   },
-  "serve": {
-    "mainTitle": "Serve",
-    "mainDescription": "SUNMI TH has after-sales service personnel to provide care 24 hours a day to assist store owners, provide information, and advise on using the machine. Including managing everything. There is a service center. The machine is repaired while in use, including Remote assistance to access the machine as if the staff team were accessing the customer screen. Help solve problems immediately",
+  "Services": {
+    "mainTitle": "Services",
+    "mainDescription": "SUNMI's innovative products meet global standards. We offer a variety of models to cater to every need, whether it's for small shops or restaurants, up to large-scale businesses.",
     "buttonTxt": "Let's start.",
     "items": [
       {
@@ -45,7 +44,9 @@
       }
     ]
   },
-  "LocaleSwitcher": {
-    "switchLocale": "Switch to {locale, select, de {Thai} en {English}}"
+  "footer": {
+    "title1": "Subject",
+    "title2": "Services",
+    "title3": "Follow us"
   }
 }

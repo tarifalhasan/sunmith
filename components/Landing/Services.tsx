@@ -3,52 +3,10 @@ import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { IoChevronForward } from "react-icons/io5";
 import { Button } from "../ui/button";
-const ServeSection = () => {
-  const t = useTranslations("serve");
+const Services = () => {
+  const t = useTranslations("Services");
   const local = useLocale(); // local return th and en value
 
-  const feature = [
-    {
-      icon: "/icons/features/trophy.svg",
-      title: "จำหน่าย",
-      des: (
-        <p className="text-xs sm:text-xl font-sans font-medium text-skin-neutral-600 text-center">
-          พร้อมบริการ! จำหน่าย สินค้าของ <br className=" hidden sm:block" />{" "}
-          <b>SUNMI</b> ทุกรุ่นทุกแบบ
-        </p>
-      ),
-    },
-    {
-      icon: "/icons/features/check.svg",
-      title: " รับประกัน",
-      des: (
-        <p className="text-xs sm:text-xl font-sans font-medium text-skin-neutral-600 text-center">
-          ทีมงานผู้เชี่ยวชาญของเรา <br className=" hidden sm:block" />
-          ที่พร้อมจะดูแลให้ธุรกิจของท่าน
-        </p>
-      ),
-    },
-    {
-      icon: "/icons/features/shipping.svg",
-      title: "บริการซ่อมบำรุง",
-      des: (
-        <p className="text-xs sm:text-xl font-sans font-medium text-skin-neutral-600 text-center">
-          เริ่มต้นธุรกิจอย่างไม่ติดขัด <br className=" hidden sm:block" /> ด้วย{" "}
-          <b>SUNMI OS SYSTEM</b>
-        </p>
-      ),
-    },
-    {
-      icon: "/icons/features/customer-support.svg",
-      title: "บริการหลังการขาย",
-      des: (
-        <p className="text-xs sm:text-xl font-sans font-medium text-skin-neutral-600 text-center">
-          บริการติดต่อสอบถาม
-          <br className=" hidden sm:block" /> ปัญหาตลอด <b>24</b> ชั่วโมง
-        </p>
-      ),
-    },
-  ];
   return (
     <section className="">
       <div className=" bg-[#f3f5f7] py-8">
@@ -92,17 +50,13 @@ const ServeSection = () => {
                 </h2>
               </div>
               <p className=" text-center sm:text-left font-sans font-normal text-base">
-                เป็นผู้นำเข้าและจัดจำหน่ายสินค้าอย่างเป็นทางการ ของแบรนด์ SUNMI
-                ทางเรามีทีมงานผู้เชี่ยวชาญ
-                ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพให้คำแนะนำ
-                การใช้งานและบริการให้คำปรึกษาหลังการขายในการ แก้ไขปัญหา
-                การใช้งานสินค้า เพื่อช่วยให้ธุรกิจของท่าน ดำเนินไปได้
-                อย่างราบรื่นและมอบการบริการที่ดีที่สุด
-                ให้แก่ลูกค้าของเราจากทั่วทั้งประเทศ สินค้านวัตกรรม ของทาง SUNMI
-                ได้รับมาตรฐานระดับโลก
+                {local === "en"
+                  ? "As the official importer and distributor of SUNMI brand products, we have a professional team that has received extensive training to provide guidance, usage instructions, and post-sales consultation services to troubleshoot product-related issues. Our aim is to help your business run smoothly and deliver the best service to our customers nationwide. SUNMI's innovative products meet global standards."
+                  : "เป็นผู้นำเข้าและจัดจำหน่ายสินค้าอย่างเป็นทางการ ของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพให้คำแนะนำ การใช้งานและบริการให้คำปรึกษาหลังการขายในการ แก้ไขปัญหา การใช้งานสินค้า เพื่อช่วยให้ธุรกิจของท่าน ดำเนินไปได้ อย่างราบรื่นและมอบการบริการที่ดีที่สุด ให้แก่ลูกค้าของเราจากทั่วทั้งประเทศ สินค้านวัตกรรม ของทาง SUNMI ได้รับมาตรฐานระดับโลก"}
               </p>
               <Button className=" gap-2 hover:gap-x-4 transition-all duration-300 rounded-full px-5">
-                ซื้อเลย <IoChevronForward className=" w-4 h-4 text-white" />
+                {local === "en" ? "Buy now" : "ซื้อเลย "}
+                <IoChevronForward className=" w-4 h-4 text-white" />
               </Button>
             </div>
           </div>
@@ -181,4 +135,4 @@ const ServeSection = () => {
   );
 };
 
-export default ServeSection;
+export default Services;

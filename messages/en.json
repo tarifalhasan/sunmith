@@ -1,0 +1,51 @@
+{
+  "Meta": {
+    "title": "Sunmith Officail"
+  },
+  "Index": {
+    "": "Home",
+    "description": "This is the home page."
+  },
+  "Category": {
+    "title": "Suitable for Business",
+    "description": "SUNMI's innovative products meet world-class standards. We have a variety of products to support every need. Whether it's a store or small restaurants to large businesses."
+  },
+  "OurProducts": {
+    "title": "Our Products",
+    "description": "SUNMI's innovative products meet world-class standards. We have a variety of products to support every need. Whether it's a store or small restaurants to large businesses."
+  },
+  "OurServices": {
+    "title": "Our Products",
+    "description": "SUNMI OFFICIAL THAILAND is the official importer and distributor of SUNMI brand products. We have a team of professionally trained experts. Give instructions for use and after-sales consulting services to solve product usage problems To help your business run smoothly. and provide the best service to our customers from all over the country."
+  },
+  "serve": {
+    "mainTitle": "Serve",
+    "mainDescription": "SUNMI TH has after-sales service personnel to provide care 24 hours a day to assist store owners, provide information, and advise on using the machine. Including managing everything. There is a service center. The machine is repaired while in use, including Remote assistance to access the machine as if the staff team were accessing the customer screen. Help solve problems immediately",
+    "buttonTxt": "Let's start.",
+    "items": [
+      {
+        "icon": "/icons/features/trophy.svg",
+        "title": "Sales",
+        "des": "Ready to serve! Distribute products from <b>SUNMI</b> of every model."
+      },
+      {
+        "icon": "/icons/features/check.svg",
+        "title": "Warranty",
+        "des": "Our team of experts is ready to take care of your business."
+      },
+      {
+        "icon": "/icons/features/shipping.svg",
+        "title": "Maintenance Service",
+        "des": "Start your business smoothly with <b>SUNMI OS SYSTEM</b>."
+      },
+      {
+        "icon": "/icons/features/customer-support.svg",
+        "title": "After-Sales Service",
+        "des": "Contact us for problem-solving 24 hours a day."
+      }
+    ]
+  },
+  "LocaleSwitcher": {
+    "switchLocale": "Switch to {locale, select, de {Thai} en {English}}"
+  }
+}

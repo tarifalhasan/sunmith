@@ -72,6 +72,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    pointer-events: inherit !important;
   }
 }
 
@@ -91,4 +92,10 @@
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   top: 86.5% !important;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  padding-right: calc(0 - var(--removed-body-scroll-bar-size)) !important;
 }

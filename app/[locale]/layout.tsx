@@ -2,12 +2,14 @@ import Footer from "@/components/layout/Footer";
 import MainHeader from "@/components/layout/Header";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { notFound } from "next/navigation";
+
+import { useLocale } from "next-intl";
 import {
   Noto_Sans_Thai as FontSans,
   Noto_Sans,
   Roboto,
 } from "next/font/google";
-import { ReactNode } from "react";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,13 +26,22 @@ export const robotoFont = Roboto({
   variable: "--roboto",
   weight: ["300", "400", "500", "700"],
 });
-interface RootLayoutProps {
-  children: ReactNode;
-}
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const l = useLocale();
+
+  // Show a 404 error if the user requests an unknown locale
+  if (locale !== l) {
+    notFound();
+  }
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
       <body
         className={cn(
@@ -38,6 +49,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable,
           natoSans.variable
         )}
+        style={{
+          pointerEvents: "inherit",
+        }}
       >
         <MainHeader />
         <main className=" pt-[81px]">{children}</main>

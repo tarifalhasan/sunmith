@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 const Categorys = () => {
+  const t = useTranslations("Category");
   const data = [
     {
       id: 1,
@@ -45,7 +47,7 @@ const Categorys = () => {
     <section className=" py-10 xl:py-12">
       <div className="">
         <h2 className=" relative after:absolute after:w-[56px] after:h-[2px] after:bg-[#9A9A9A] after:left-1/2 text-center text-3xl font-sans font-bold lg:text-[2.5rem] after:-translate-x-1/2 after:top-[162%]">
-          เหมาะกับธุรกิจ
+          {t("title")}
         </h2>
       </div>
       <div className="bg-skin-neutral-200 mt-16 sm:mt-24">

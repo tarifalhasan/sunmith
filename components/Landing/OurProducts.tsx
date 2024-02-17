@@ -1,21 +1,21 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import StaticProductCard1 from "../common/StaticProductCard1";
 
 const OurProducts = () => {
+  const t = useTranslations("OurProducts");
   return (
     <section id="our_products" className="  w-full h-full  py-10 sm:py-12">
       <div>
         <div>
           <h2 className=" relative after:absolute after:w-[56px] after:h-[2px] after:bg-[#9A9A9A] after:left-1/2 text-center text-3xl font-sans font-bold lg:text-[2.5rem] after:-translate-x-1/2 after:top-[162%]">
-            ผลิตภัณฑ์ของเรา
+            {t("title")}
           </h2>
         </div>
         <p className=" max-w-[1000px] mx-auto pt-[40px] sm:pt-[60px] text-center text-base lg:text-lg lg:font-semibold font-sans font-medium text-skin-neutral-700">
-          สินค้านวัตกรรมของทาง <b>SUNMI</b> ได้รับมาตรฐานระดับโลก
-          เรามีสินค้าหลากหลายรุ่นเพื่อรองรับทุกความต้องการ ไม่ว่าจะเป็นร้านค้า
-          หรือร้านอาหารขนาดเล็กไปจนถึงธุรกิจขนาดใหญ่ 
+          {t("description")}
         </p>
       </div>
       <div

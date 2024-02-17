@@ -1,20 +1,4 @@
 "use client";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -23,12 +7,13 @@ import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose, IoNotifications } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
+import LocaleSwitcher from "../common/LandguageSwicher";
 import SearchBar from "../ui/searchbar";
 
 const MainHeader = () => {
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
-  const [language, setLanguage] = useState("ไทย");
+
   const Links = [
     {
       label: "Home",
@@ -68,17 +53,13 @@ const MainHeader = () => {
     };
   });
 
-  const onLanguagesChanges = (value: string) => {
-    setLanguage(value);
-  };
-
   return (
     <header
       className={cn(
         !header || nav
           ? " bg-transparent py-4 shadow-none  "
           : " shadow-none border-b backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6] border-neutral-200 border-white/[0.1] ",
-        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300 h-[81px]",
+        "  top-0 w-full mx-auto z-40 py-5 fixed transition-all duration-300 h-[81px] overflow-hidden",
         nav && "bg-white/[0.9]"
       )}
     >
@@ -129,49 +110,7 @@ const MainHeader = () => {
             </div>
             <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
             <div className=" inline-flex items-center gap-5">
-              <Select
-                value={language}
-                onValueChange={(value) => onLanguagesChanges(value)}
-              >
-                <SelectTrigger className=" w-[100px] bg-transparent border-none focus:outline-none focus:ring-0 focus:ring-offset-0 ">
-                  <div className=" inline-flex items-center gap-4">
-                    <Avatar>
-                      <AvatarImage
-                        src={
-                          language === "en"
-                            ? "/icons/Flag_of_the_United_States_(DoS_ECA_Color_Standard).svg.png"
-                            : "/icons/Flag_of_Thailand.png"
-                        }
-                      />
-                      <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                    <span className=" uppercase text-base font-normal text-skin-neutral-600">
-                      {language}
-                    </span>
-                  </div>
-                </SelectTrigger>
-                <SelectContent align="end">
-                  <SelectItem value="en">Eng</SelectItem>
-                  <SelectItem value="ไทย">ไทย</SelectItem>
-                </SelectContent>
-              </Select>
-
-              {/* <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                    <AvatarFallback>CN</AvatarFallback>
-                  </Avatar>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Profile</DropdownMenuItem>
-                  <DropdownMenuItem>Billing</DropdownMenuItem>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuItem>Logout</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
+              <LocaleSwitcher />
             </div>
           </div>
           <div
@@ -223,49 +162,7 @@ const MainHeader = () => {
                 </div>
                 <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
                 <div className=" inline-flex items-center gap-5">
-                  <Select
-                    value={language}
-                    onValueChange={(value) => onLanguagesChanges(value)}
-                  >
-                    <SelectTrigger className=" w-[100px] bg-transparent border-none focus:outline-none focus:ring-0 focus:ring-offset-0 ">
-                      <div className=" inline-flex items-center gap-4">
-                        <Avatar>
-                          <AvatarImage
-                            src={
-                              language === "en"
-                                ? "/icons/Flag_of_the_United_States_(DoS_ECA_Color_Standard).svg.png"
-                                : "/icons/Flag_of_Thailand.png"
-                            }
-                          />
-                          <AvatarFallback>CN</AvatarFallback>
-                        </Avatar>
-                        <span className=" uppercase text-base font-normal text-skin-neutral-600">
-                          {language}
-                        </span>
-                      </div>
-                    </SelectTrigger>
-                    <SelectContent align="end">
-                      <SelectItem value="en">Eng</SelectItem>
-                      <SelectItem value="ไทย">ไทย</SelectItem>
-                    </SelectContent>
-                  </Select>
-
-                  <DropdownMenu>
-                    <DropdownMenuTrigger>
-                      <Avatar>
-                        <AvatarImage src="https://github.com/shadcn.png" />
-                        <AvatarFallback>CN</AvatarFallback>
-                      </Avatar>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Profile</DropdownMenuItem>
-                      <DropdownMenuItem>Billing</DropdownMenuItem>
-                      <DropdownMenuItem>Team</DropdownMenuItem>
-                      <DropdownMenuItem>Logout</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+                  <LocaleSwitcher />
                 </div>
               </div>
             </li>

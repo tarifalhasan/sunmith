@@ -1,6 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const OurServices = () => {
+  const t = useTranslations("OurServices");
+
   const data = [
     {
       id: 1,
@@ -25,20 +28,10 @@ const OurServices = () => {
     <section className="  py-12 container">
       <div>
         <h2 className=" relative after:absolute after:w-[56px] after:h-[2px] after:bg-[#9A9A9A] after:left-1/2 text-center text-3xl font-sans font-bold lg:text-[2.5rem] after:-translate-x-1/2 after:top-[162%]">
-          บริการของเรา
+          {t("title")}
         </h2>
         <p className=" pt-[60px] sm:pt-[80px] text-center text-base lg:text-lg lg:font-semibold font-sans font-medium text-skin-neutral-700">
-          <b className=" font-normal lg:font-bold">SUNMI OFFICIAL THAILAND</b>{" "}
-          <br className=" lg:hidden" />
-          เป็นผู้นำเข้าและจัดจำหน่ายสินค้าอย่างเป็นทางการของแบรนด์ <b>
-            SUNMI
-          </b>{" "}
-          <br className=" hidden lg:block" />
-          ทางเรามีทีมงานผู้เชี่ยวชาญที่ได้รับการฝึกอบรมมาอย่างมืออาชีพ
-          ให้คำแนะนำการใช้งาน
-          และบริการให้คำปรึกษาหลังการขายในการแก้ไขปัญหาการใช้งานสินค้า
-          เพื่อช่วยให้ธุรกิจของท่านดำเนินไปได้อย่างราบรื่น
-          และมอบการบริการที่ดีที่สุดให้แก่ลูกค้าของเราจากทั่วทั้งประเทศ
+          {t("description")}
         </p>
       </div>
       <div className=" grid pt-[65px] lg:grid-cols-3 gap-8">

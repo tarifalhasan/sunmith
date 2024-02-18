@@ -161,7 +161,8 @@ const Footer = () => {
                 />
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"https://www.facebook.com/SUNMITHBKK"}
+                  target="_blank"
                 >
                   sunmithai
                 </Link>
@@ -175,7 +176,8 @@ const Footer = () => {
                 />
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"https://page.line.me/888vwsck?openQrModal=true"}
+                  target="_blank"
                 >
                   @sunmicare
                 </Link>
@@ -189,7 +191,8 @@ const Footer = () => {
                 />
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"https://www.instagram.com/sunmithofficial"}
+                  target="_blank"
                 >
                   sunmithofficial_
                 </Link>

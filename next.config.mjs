@@ -5,7 +5,18 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["imgs.search.brave.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "imgs.search.brave.com",
+        port: "",
+      },
+    ],
   },
 };
 

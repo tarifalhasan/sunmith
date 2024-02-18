@@ -20,6 +20,10 @@ const MainHeader = () => {
       href: "/",
     },
     {
+      label: "Blogs",
+      href: "/blogs",
+    },
+    {
       label: "Products ",
       href: "/products",
     },

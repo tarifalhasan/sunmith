@@ -64,7 +64,7 @@ export default async function BlogDetails({
         </div>
         <div className="prose  py-12 prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
           <BlockContent
-            projectId="rayftqxv"
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"
             blocks={data?.body}
           />

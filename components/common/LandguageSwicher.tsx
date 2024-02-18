@@ -1,49 +1,64 @@
+"use client";
+import { FiChevronDown } from "react-icons/fi";
+
 import { Link } from "@/navigation";
 import { useLocale } from "next-intl";
-export default function LocaleSwitcher() {
-  // const t = useTranslations("LocaleSwitcher");
+
+import { useState } from "react";
+
+const LocaleSwitcher = () => {
   const locale = useLocale();
-  const otherLocale = locale === "en" ? "th" : "en";
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    // <Select
-    //   value={language}
-    //   onValueChange={(value) => onLanguagesChanges(value)}
-    // >
-    //   <SelectTrigger className=" w-[100px] bg-transparent border-none focus:outline-none focus:ring-0 focus:ring-offset-0 ">
-    //     <div className=" inline-flex items-center gap-4">
-    //       <Avatar>
-    //         <AvatarImage
-    //           src={
-    //             language === "en"
-    //               ? "/icons/Flag_of_the_United_States_(DoS_ECA_Color_Standard).svg.png"
-    //               : "/icons/Flag_of_Thailand.png"
-    //           }
-    //         />
-    //         <AvatarFallback>EN</AvatarFallback>
-    //       </Avatar>
-    //       <span className=" uppercase text-base font-normal text-skin-neutral-600">
-    //         {language}
-    //       </span>
-    //     </div>
-    //   </SelectTrigger>
-    //   <SelectContent align="end">
-    //     <SelectItem value="en">
-    //       <Link href="/" locale="en">
-    //         En
-    //       </Link>
-    //     </SelectItem>
-    //     <SelectItem value="ไทย">ไทย</SelectItem>
-    //   </SelectContent>
-    // </Select>
+    <div className="relative inline-block text-left">
+      <div>
+        <span className="rounded-md shadow-sm">
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition ease-in-out duration-150"
+            id="options-menu"
+            aria-haspopup="true"
+            aria-expanded="true"
+          >
+            {locale === "en" ? "🇺🇸 EN" : "🇹🇭 TH"}
+            <FiChevronDown className=" w-5 h-5" />
+          </button>
+        </span>
+      </div>
 
-    <>
-      <Link href={"/"} locale="en">
-        En
-      </Link>
-      <Link href={"/"} locale="th">
-        Th
-      </Link>
-    </>
+      {isOpen && (
+        <div className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+          <div
+            className="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
+            <Link
+              // onClick={() => handleChange("en")}
+              href={"/"}
+              locale="en"
+              className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+              role="menuitem"
+            >
+              🇺🇸 USA
+            </Link>
+            <Link
+              href={"/"}
+              locale="th"
+              // onClick={() => handleChange("th")}
+              className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
+              role="menuitem"
+            >
+              🇹🇭 Thailand
+            </Link>
+          </div>
+        </div>
+      )}
+    </div>
   );
-}
+};
+
+export default LocaleSwitcher;

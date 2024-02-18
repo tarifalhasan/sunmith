@@ -64,8 +64,8 @@ const MainHeader = () => {
           nav && "bg-white/[0.9]"
         )}
       >
-        <div className=" px-4 xl:container mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between">
-          <div className="flex gap-x-6 items-center justify-between w-full">
+        <div className="  xl:container mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between">
+          <div className="flex px-4 gap-x-6 items-center justify-between w-full">
             <div className=" inline-flex items-center gap-x-20">
               <Link href={"/"}>
                 <Image
@@ -133,7 +133,7 @@ const MainHeader = () => {
                 nav
                   ? " py-8 xl:py-0  xl:px-0"
                   : "max-h-0 xl:max-h-max w-full bg-background",
-                " flex  flex-col items-center w-full bg-background/90  xl:flex-row xl:w-max xl:gap-x-8 gap-y-5"
+                " flex  flex-col items-center w-full bg-background/90  xl:flex-row xl:w-max xl:gap-x-8 gap-y-5 bg-white"
               )}
             >
               {Links.map((link, index) => (

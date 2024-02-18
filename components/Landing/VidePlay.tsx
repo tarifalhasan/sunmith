@@ -54,7 +54,7 @@ const VidePlay = () => {
         </div>
       </div>
       <Dialog open={openVideo} onOpenChange={setOpenVideo}>
-        <DialogContent className=" flex  max-w-[1100px]">
+        <DialogContent className=" !rounded-none flex  max-w-[1100px]">
           <div className=" p-2 h-[calc(40vh-100px)] sm:h-[70vh-100px] lg:h-[calc(60vh-100px)] sm:p-4 w-full">
             <ReactPlayer
               controls={true}

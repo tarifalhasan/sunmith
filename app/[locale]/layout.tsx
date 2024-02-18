@@ -11,17 +11,17 @@ import {
   Roboto,
 } from "next/font/google";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
-export const natoSans = Noto_Sans({
+const natoSans = Noto_Sans({
   subsets: ["latin"],
   variable: "--nato-sans",
 });
 
-export const robotoFont = Roboto({
+const robotoFont = Roboto({
   subsets: ["latin"],
   variable: "--roboto",
   weight: ["300", "400", "500", "700"],
@@ -47,7 +47,8 @@ export default async function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          natoSans.variable
+          natoSans.variable,
+          robotoFont.variable
         )}
         style={{
           pointerEvents: "inherit",

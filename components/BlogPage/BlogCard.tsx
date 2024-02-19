@@ -1,10 +1,7 @@
-"use client";
-import Image from "next/image";
-import { LuClock4 } from "react-icons/lu";
-
 import { dateFormat } from "@/lib/formatDate";
 import { urlForImage } from "@/sanity/lib/image";
 import { IBlogCardType } from "@/types";
+import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -18,37 +15,36 @@ const BlogCard: FC<IBlogCardType> = ({
 }) => {
   return (
     <div className=" w-full">
-      <div className="w-full relative overflow-hidden mx-auto">
-        <Link
-          href={`/blogs/${currentSlug}`}
-          className=" w-full relative mx-auto"
-        >
-          <div className=" relative overflow-hidden">
-            <Image
-              src={urlForImage(mainImage)}
-              alt={title}
-              width={478}
-              height={320}
-              className="rounded-md "
-            />
-          </div>
-        </Link>
-      </div>
-      <div className=" pt-5 inline-flex items-center gap-1">
-        <LuClock4 className=" w-6 h-6  text-black opacity-40" />
-        <p className="text-base font-medium text-black opacity-40">
-          {dateFormat(publishedAt)}
+      <Link href={`/blogs/${currentSlug}`}>
+        <div className=" relative">
+          <Image
+            src={urlForImage(mainImage)}
+            alt={title}
+            width={478}
+            height={320}
+            className="relative overflow-hidden w-auto h-auto group transform transition duration-500 hover:scale-105 rounded-lg"
+            quality={80}
+          />
+        </div>
+      </Link>
+      <div className="pt-2 space-y-2  text-center">
+        <h2 className="text-xl font-roboto xl:text-2xl font-bold text-[#54595f]">
+          {title}
+        </h2>
+        <div>
+          <span className="text-sm font-roboto font-normal text-[#adadad]">
+            {dateFormat(publishedAt)}
+          </span>
+        </div>
+        <p className="text-sm font-roboto font-normal text-[#777] xl:text-base text-center">
+          {description}
         </p>
-      </div>
-      <div>
-        <div>
-          <h2 className=" text-center text-xl xl:text-2xl font-bold text-black">
-            {title}
-          </h2>
-        </div>
-        <div>
-          <p className=" text-sm   xl:text-base text-center">{description}</p>
-        </div>
+        <Link
+          className="  pt-1 text-primary text-lg font-roboto font-semibold"
+          href={`/blogs/${currentSlug}`}
+        >
+          Load More
+        </Link>
       </div>
     </div>
   );

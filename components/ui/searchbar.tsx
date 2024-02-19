@@ -63,6 +63,7 @@ const SearchBar = () => {
     <>
       <div className=" w-full  flex items-center h-10  px-2  rounded-[4px] transition-all duration-300 border hover:border-skin-sidebar-border fill-skin-gray-600 hover:fill-white text-skin-gray-600 border-transparent hover:bg-skin-gray-800 hover:text-white bg-transparent">
         <button
+          aria-label="search-bar"
           onClick={() => setopenModal((prev) => !prev)}
           className="flex items-center space-x-1 w-full "
         >

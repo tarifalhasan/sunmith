@@ -158,6 +158,7 @@ const Footer = () => {
                   alt="facebook"
                   width={24}
                   height={24}
+                  className=" w-auto h-auto"
                 />
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
@@ -173,6 +174,7 @@ const Footer = () => {
                   alt="line"
                   width={24}
                   height={24}
+                  className=" w-auto h-auto"
                 />
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
@@ -187,6 +189,7 @@ const Footer = () => {
                   src={"/icons/instagram.svg"}
                   alt="instagram"
                   width={24}
+                  className=" w-auto h-auto"
                   height={24}
                 />
                 <Link

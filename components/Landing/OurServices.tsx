@@ -61,7 +61,7 @@ const OurServices = () => {
               </div>
             </div>
             <div className=" pt-7">
-              <p className=" text-base text-center lg:text-left text-[#7D7987]">
+              <p className=" text-base text-center text-slate-700 lg:text-left ">
                 You can get 24/7 urgent care for yourself{" "}
                 <br className=" hidden lg:block" /> or your children and your{" "}
                 <br className=" hidden lg:block" /> lovely family

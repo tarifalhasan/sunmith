@@ -16,9 +16,9 @@ const LocaleSwitcher = () => {
         <span className="rounded-md shadow-sm">
           <button
             type="button"
+            aria-label="open_locale"
             onClick={() => setIsOpen(!isOpen)}
             className="inline-flex items-center justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition ease-in-out duration-150"
-            id="options-menu"
             aria-haspopup="true"
             aria-expanded="true"
           >

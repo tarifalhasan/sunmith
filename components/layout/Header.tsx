@@ -64,7 +64,7 @@ const MainHeader = () => {
           !header || nav
             ? " bg-transparent py-4 shadow-none  "
             : " shadow-none backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6]  ",
-          "  top-0 border-b  w-full mx-auto z-[9999] fixed py-5  transition-all duration-300 h-[81px]  border-neutral-200 ",
+          "  top-0 border-b  w-full mx-auto z-40 fixed py-5  transition-all duration-300 h-[81px]  border-neutral-200 ",
           nav && "bg-white/[0.9]"
         )}
       >
@@ -77,6 +77,7 @@ const MainHeader = () => {
                   alt="Shanghai-Sunmi-Technology-LOGO"
                   width={139}
                   height={26}
+                  className=" w-auto h-auto"
                 />
               </Link>
               <ul
@@ -154,13 +155,13 @@ const MainHeader = () => {
                 <div className=" xl:hidden flex flex-col items-center gap-5">
                   <div className=" inline-flex items-center gap-x-5 ">
                     <SearchBar />
-                    <button className=" relative ">
+                    <button aria-label="add to cart" className=" relative ">
                       <MdShoppingCart className=" w-7 h-7 text-primary" />
                       <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px]  text-skin-status-600  justify-center font-medium font-roboto -top-1">
                         01
                       </span>
                     </button>
-                    <button className=" relative ">
+                    <button aria-label="notifation" className=" relative ">
                       <IoNotifications className=" w-7 h-7 text-primary" />
                       <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px] text-skin-status-600 font-roboto font-medium justify-center -top-1">
                         01

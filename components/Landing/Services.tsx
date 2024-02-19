@@ -19,7 +19,10 @@ const Services = () => {
             <p className="text-center text-base  lg:font-semibold font-sans font-medium text-skin-neutral-700">
               {t("mainDescription")}
             </p>
-            <Button className=" h-[60px] px-10 mx-auto block rounded-full font-sans font-bold text-xl lg:text-2xl">
+            <Button
+              aria-label={t("buttonTxt")} // Add an ARIA label for the button
+              className=" h-[60px] px-10 mx-auto block rounded-full font-sans font-bold text-xl lg:text-2xl"
+            >
               {t("buttonTxt")}
             </Button>
           </div>
@@ -67,9 +70,9 @@ const Services = () => {
                       quality={80}
                     />
                   </div>
-                  <h4 className=" text-primary text-lg sm:text-xl lg:text-2xl font-bold font-sans">
+                  <p className=" text-primary text-lg sm:text-xl lg:text-2xl font-bold font-sans">
                     {item.title}
-                  </h4>
+                  </p>
                   <div
                     className=" text-center"
                     dangerouslySetInnerHTML={{ __html: item.des }}

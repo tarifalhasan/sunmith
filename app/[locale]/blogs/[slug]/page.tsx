@@ -72,7 +72,7 @@ export default async function BlogDetails({ params }: Props) {
             </AspectRatio>
           </div>
         </div>
-        <div className="prose  mt-20 prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
+        <div className="prose  mt-10 sm:mt-20 prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
           <BlockContent
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"

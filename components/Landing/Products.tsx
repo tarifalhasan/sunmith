@@ -19,9 +19,10 @@ const Products = async () => {
       <div className=" py-7 mx-auto max-w-[246px] ">
         <Image
           src={"/images/POS Product.svg"}
-          alt=""
-          className=" block mx-auto"
+          alt="sunmith product"
+          className=" w-auto h-auto block mx-auto"
           width={160}
+          quality={80}
           height={48}
         />
       </div>

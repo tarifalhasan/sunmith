@@ -64,7 +64,7 @@ export default async function BlogDetails({ params }: Props) {
             <AspectRatio ratio={16 / 9}>
               <Image
                 src={urlForImage(data.mainImage)}
-                alt="Image"
+                alt={data.title}
                 width={1250}
                 height={450}
                 className="rounded-md w-full object-cover"
@@ -72,7 +72,7 @@ export default async function BlogDetails({ params }: Props) {
             </AspectRatio>
           </div>
         </div>
-        <div className="prose  py-12 prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
+        <div className="prose  mt-20 prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
           <BlockContent
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
             dataset="production"

@@ -9,37 +9,37 @@ const Categorys = () => {
       id: 1,
       icon: "/images/categories/cafe.svg",
       title: "Cafe’",
-      link: "/",
+      slug: "/",
     },
     {
       id: 2,
       icon: "/images/categories/bar.svg",
       title: "Bar",
-      link: "/",
+      slug: "/",
     },
     {
       id: 3,
       icon: "/images/categories/salon.svg",
       title: "Barber/Salon",
-      link: "/",
+      slug: "/",
     },
     {
       id: 4,
       icon: "/images/categories/retail.svg",
       title: "Retail",
-      link: "/",
+      slug: "/",
     },
     {
       id: 5,
       icon: "/images/categories/shop-fashion.svg",
       title: "Cloth Shop",
-      link: "/",
+      slug: "/",
     },
     {
       id: 6,
       icon: "/images/categories/food.svg",
       title: "Cloud Kitchen",
-      link: "/",
+      slug: "/",
     },
   ];
 
@@ -56,13 +56,15 @@ const Categorys = () => {
             <Link
               href={"/"}
               className=" flex flex-col items-center gap-4"
-              key={data.id}
+              key={data.id + index}
             >
               <div>
                 <Image
                   src={data.icon}
                   alt={data.title}
                   width={85}
+                  className=" w-auto h-auto"
+                  quality={80}
                   height={136}
                 />
               </div>

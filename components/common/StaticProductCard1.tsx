@@ -20,7 +20,6 @@ const StaticProductCard1 = ({
     <div
       style={{
         background: `url(${bg})`,
-        // backgroundPosition: "100% 100%",
       }}
       className=" bg-cover bg-center w-full p-6 bg-no-repeat rounded-[8px]"
     >
@@ -31,7 +30,14 @@ const StaticProductCard1 = ({
       </div>
       <div className=" flex items-center  justify-between gap-2">
         <div className="  max-w-[141px] lg:max-w-[195px]">
-          <Image src={prductImage} alt={title} width={184} height={131} />
+          <Image
+            src={prductImage}
+            alt={title}
+            width={184}
+            className=" w-auto h-auto"
+            quality={80}
+            height={131}
+          />
         </div>
         <div className="   space-y-4 pt-5">
           <h2 className=" text-3xl font-bold text-center font-sans text-white">
@@ -41,7 +47,10 @@ const StaticProductCard1 = ({
             {subTitle}
           </p>
           <div className="flex justify-end">
-            <button className=" transition-all duration-300 hover:gap-3 text-white hover:bg-primary inline-flex py-1.5 rounded-full px-3 items-center gap-2 border-2 border-white text-sm font-normal  font-roboto">
+            <button
+              aria-label="learn-more-product"
+              className=" transition-all duration-300 hover:gap-3 text-white hover:bg-primary inline-flex py-1.5 rounded-full px-3 items-center gap-2 border-2 border-white text-sm font-normal  font-roboto"
+            >
               Learn more <FaArrowRight className=" w-[17px] h-[15px]" />
             </button>
           </div>

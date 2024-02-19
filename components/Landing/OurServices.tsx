@@ -34,7 +34,7 @@ const OurServices = () => {
           {t("description")}
         </p>
       </div>
-      <div className=" grid pt-[65px] lg:grid-cols-3 gap-8">
+      <div id="features" className=" grid pt-[65px] lg:grid-cols-3 gap-8">
         {data.map((item, index) => (
           <div
             key={item.id}
@@ -47,9 +47,11 @@ const OurServices = () => {
               <div>
                 <Image
                   src={item.icon}
-                  alt={item.title}
+                  alt={item.title + "sunmith"}
                   width={165}
                   height={154}
+                  quality={80}
+                  className=" w-auto h-auto"
                 />
               </div>
               <div className="">

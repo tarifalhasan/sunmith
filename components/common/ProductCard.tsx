@@ -98,12 +98,15 @@ const ProductCard: FC<IProducts> = ({
               />
               <path d="M7.77053 0H5.00366V24H7.77053V0Z" fill="#636363" />
             </svg>
-
             <h3 className=" text-xs font-bold font-nato_sans  text-skin-neutral-700">
               18900
             </h3>
           </div>
-          <Button className=" h-8 rounded-full" variant={"destructive"}>
+          <Button
+            aria-label="dicount_button"
+            className=" h-8 rounded-full"
+            variant={"destructive"}
+          >
             ส่วนลด -{discount}%
           </Button>
         </div>

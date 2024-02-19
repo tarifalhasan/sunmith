@@ -9,19 +9,12 @@ import "swiper/css/effect-fade";
 
 import "swiper/css/pagination";
 
-// import required modules
+import hero_image_1 from "@/public/images/hero/1.webp";
+import hero_image_2 from "@/public/images/hero/2.jpg";
+import hero_image_3 from "@/public/images/hero/3.png";
+import Image from "next/image";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-
 export default function Hero() {
-  const data = [
-    {
-      imageUrl: "/images/hero/2.jpg",
-    },
-    {
-      imageUrl: "/images/hero/3.jpg",
-    },
-  ];
-
   return (
     <div className="">
       <Swiper
@@ -32,21 +25,21 @@ export default function Hero() {
           clickable: true,
         }}
         autoplay={{
-          delay: 3500,
+          delay: 4500,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Pagination, Autoplay]}
         className="heroSwiper"
       >
         <SwiperSlide>
-          <div
-            className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/hero/1.png')`,
-              backgroundPosition: "100% 100%",
-              backgroundSize: "100% 100%",
-            }}
-          >
+          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat">
+            <Image
+              src={hero_image_1}
+              fill
+              quality={80}
+              className=" absolute left-0 w-full right-0"
+              alt="sunmit home hero image 1"
+            />
             <div className=" container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
               <div className="container absolute  top-1/2 -translate-y-1/2  mx-auto  px-4 w-full left-0 ">
                 <div className="xl:space-y-7 space-y-3">
@@ -58,7 +51,10 @@ export default function Hero() {
                     <br className=" hidden xl:block" /> takes you
                   </p>
                   <div className="flex text-white justify-center lg:justify-start">
-                    <button className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none">
+                    <button
+                      aria-label="learn_more"
+                      className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none"
+                    >
                       <span>Learn More</span>{" "}
                       <BiChevronRight className=" w-7 h-7" />
                     </button>
@@ -69,14 +65,13 @@ export default function Hero() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div
-            className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/hero/2.jpg')`,
-              backgroundPosition: "100% 100%",
-              backgroundSize: "100% 100%",
-            }}
-          >
+          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat">
+            <Image
+              src={hero_image_2}
+              fill
+              className=" absolute left-0 w-full right-0"
+              alt="sunmit home hero image 2"
+            />
             <div className="container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
               <div className="container   absolute top-1/2 -translate-y-1/2 mx-auto  px-4 w-full left-0 ">
                 <div className=" space-y-2 xl:space-y-6">
@@ -90,7 +85,10 @@ export default function Hero() {
                     Compact,loaded with features.
                   </p>
                   <div className="flex text-white justify-center lg:justify-start">
-                    <button className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none">
+                    <button
+                      aria-label="learn_more_2"
+                      className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none"
+                    >
                       <span>Learn More</span>{" "}
                       <BiChevronRight className=" w-7 h-7" />
                     </button>
@@ -101,13 +99,14 @@ export default function Hero() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div
-            className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-cover bg-center block m-0   bg-no-repeat"
-            style={{
-              backgroundImage: `url('/images/hero/3.png')`,
-              // backgroundPosition: "100% 50%",
-            }}
-          >
+          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] block m-0   bg-no-repeat">
+            <Image
+              src={hero_image_3}
+              fill
+              className=" absolute left-0 w-full right-0"
+              alt="sunmit home hero image 3"
+              quality={80}
+            />
             <div className="container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
               <div className="container  mb-6  absolute top-1/2 -translate-y-1/2 mx-auto py-28 md:py-[9rem] px-4 w-full left-0 "></div>
             </div>

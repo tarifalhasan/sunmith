@@ -1,8 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
 import StaticProductCard1 from "../common/StaticProductCard1";
+import StaticsProductCard2 from "../common/StaticsProductCard2";
 
 const OurProducts = () => {
   const t = useTranslations("OurProducts");
@@ -43,61 +42,25 @@ const OurProducts = () => {
               />
             </div>
             <div className="  mt-6  grid grid-cols-12 gap-6">
-              <div
-                style={{
-                  backgroundImage: "url('/images/Remote Assistance.png')",
-                }}
-                className=" min-h-[226px] col-span-12 xl:col-span-5 bg-cover bg-center w-full flex flex-col items-center gap-4 p-6 bg-no-repeat rounded-[8px]"
-              >
-                <div>
-                  <h2 className=" text-xl text-white font-bold lg:text-2xl font-roboto">
-                    Remote Assistance
-                  </h2>
-                </div>
-                <p className=" text-sm text-center lg:text-base font-sans font-normal text-white Troubleshoot, with no geographic restrictions.">
-                  Troubleshoot, with no geographic restrictions.
-                </p>
-                <Link href={"/"}>
-                  <button className=" transition-all duration-300 hover:gap-3 text-white hover:bg-primary inline-flex py-2 rounded-full px-3 items-center gap-2 border-2 border-white text-sm font-normal  font-roboto">
-                    Learn more <FaArrowRight className=" w-[17px] h-[15px]" />
-                  </button>
-                </Link>
+              <div className=" col-span-12 xl:col-span-5">
+                <StaticsProductCard2
+                  image="/images/Remote Assistance.png"
+                  title=" Remote Assistance"
+                  description=" Troubleshoot, with no geographic restrictions."
+                  className=" flex  items-center col-span-12 xl:col-span-5 flex-col gap-5"
+                />
               </div>
               <div className=" grid col-span-12 xl:col-span-7  gap-6 lg:grid-cols-2">
-                <div
-                  style={{
-                    backgroundImage: "url('/images/sunmit home.png')",
-                  }}
-                  className=" min-h-[226px] c bg-cover bg-center w-full  gap-4 p-6 bg-no-repeat rounded-[8px]"
-                >
-                  <div>
-                    <h2 className=" text-xl text-white font-bold lg:text-2xl font-roboto">
-                      SUNMI TH Home
-                    </h2>
-                  </div>
-                  <Link href={"/"}>
-                    <button className=" transition-all duration-300 hover:gap-3 text-white hover:bg-primary inline-flex py-2 rounded-full px-3 items-center gap-2 border-2 border-white text-sm font-normal  font-roboto">
-                      Learn more <FaArrowRight className=" w-[17px] h-[15px]" />
-                    </button>
-                  </Link>
-                </div>
-                <div
-                  style={{
-                    backgroundImage: "url('/images/SUNMI TH Care +.png')",
-                  }}
-                  className=" min-h-[226px] c bg-cover bg-center w-full  gap-4 p-6 bg-no-repeat rounded-[8px]"
-                >
-                  <div>
-                    <h2 className=" text-xl text-white font-bold lg:text-2xl font-roboto">
-                      SUNMI TH Care +
-                    </h2>
-                  </div>
-                  <Link href={"/"}>
-                    <button className=" transition-all duration-300 hover:gap-3 text-white hover:bg-primary inline-flex py-2 rounded-full px-3 items-center gap-2 border-2 border-white text-sm font-normal  font-roboto">
-                      Learn more <FaArrowRight className=" w-[17px] h-[15px]" />
-                    </button>
-                  </Link>
-                </div>
+                <StaticsProductCard2
+                  image="/images/sunmit home.png"
+                  title="SUNMI TH Home"
+                  className=" flex flex-col gap-5"
+                />
+                <StaticsProductCard2
+                  image="/images/SUNMI TH Care +.png"
+                  title="SUNMI TH Care +"
+                  className=" flex flex-col p-0 gap-5"
+                />
               </div>
             </div>
           </div>

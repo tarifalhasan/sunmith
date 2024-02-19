@@ -35,12 +35,17 @@ const Services = () => {
             SUNMI V2
           </h2>
         </div>
-        <p className=" text-center sm:text-left font-sans font-normal text-base">
-          {local === "en"
-            ? "As the official importer and distributor of SUNMI brand products, we have a professional team that has received extensive training to provide guidance, usage instructions, and post-sales consultation services to troubleshoot product-related issues. Our aim is to help your business run smoothly and deliver the best service to our customers nationwide. SUNMI's innovative products meet global standards."
-            : "เป็นผู้นำเข้าและจัดจำหน่ายสินค้าอย่างเป็นทางการ ของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพให้คำแนะนำ การใช้งานและบริการให้คำปรึกษาหลังการขายในการ แก้ไขปัญหา การใช้งานสินค้า เพื่อช่วยให้ธุรกิจของท่าน ดำเนินไปได้ อย่างราบรื่นและมอบการบริการที่ดีที่สุด ให้แก่ลูกค้าของเราจากทั่วทั้งประเทศ สินค้านวัตกรรม ของทาง SUNMI ได้รับมาตรฐานระดับโลก"}
-        </p>
-        <Button className=" gap-2 hover:gap-x-4 transition-all duration-300 rounded-full px-5">
+        <div>
+          <p className=" text-center sm:text-left font-sans font-normal text-base">
+            {local === "en"
+              ? "As the official importer and distributor of SUNMI brand products, we have a professional team that has received extensive training to provide guidance, usage instructions, and post-sales consultation services to troubleshoot product-related issues. Our aim is to help your business run smoothly and deliver the best service to our customers nationwide. SUNMI's innovative products meet global standards."
+              : "เป็นผู้นำเข้าและจัดจำหน่ายสินค้าอย่างเป็นทางการ ของแบรนด์ SUNMI ทางเรามีทีมงานผู้เชี่ยวชาญ ที่ได้รับการฝึกอบรมมาอย่างมืออาชีพให้คำแนะนำ การใช้งานและบริการให้คำปรึกษาหลังการขายในการ แก้ไขปัญหา การใช้งานสินค้า เพื่อช่วยให้ธุรกิจของท่าน ดำเนินไปได้ อย่างราบรื่นและมอบการบริการที่ดีที่สุด ให้แก่ลูกค้าของเราจากทั่วทั้งประเทศ สินค้านวัตกรรม ของทาง SUNMI ได้รับมาตรฐานระดับโลก"}
+          </p>
+        </div>
+        <Button
+          aria-label="ซื้อเลย"
+          className=" gap-2 hover:gap-x-4 transition-all duration-300 rounded-full px-5"
+        >
           ซื้อเลย <IoChevronForward className=" w-4 h-4 text-white" />
         </Button>
       </div>
@@ -58,6 +63,8 @@ const Services = () => {
                       alt={item.title}
                       width={53}
                       height={60}
+                      className=" w-auto h-auto"
+                      quality={80}
                     />
                   </div>
                   <h4 className=" text-primary text-lg sm:text-xl lg:text-2xl font-bold font-sans">
@@ -80,6 +87,8 @@ const Services = () => {
                       alt={item.title}
                       width={53}
                       height={60}
+                      className=" w-auto h-auto"
+                      quality={80}
                     />
                   </div>
                   <h4 className=" text-primary text-lg sm:text-xl lg:text-2xl font-bold font-sans">

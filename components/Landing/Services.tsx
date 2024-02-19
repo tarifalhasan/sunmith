@@ -13,7 +13,6 @@ const Services = () => {
       <div className=" bg-[#f3f5f7] py-8">
         <div className=" container">
           <div className=" space-y-7">
-            <p>{local}</p>
             <h2 className=" text-center text-3xl font-sans font-bold lg:text-[2.5rem]  ">
               {t("mainTitle")}
             </h2>

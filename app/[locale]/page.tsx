@@ -9,7 +9,7 @@ import MainHeader from "@/components/layout/Header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sunmith.com"),
+  metadataBase: new URL("https://sunmith-ek4h.vercel.app/"),
   title: {
     default: "เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน",
     template: `%s | เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน`,
@@ -17,9 +17,10 @@ export const metadata: Metadata = {
   description:
     "SUNMITH เครื่องคิดเงิน POS หลายรุ่นให้เลือกใช้ตามความเหมาะสมของหน้าร้าน เป็นได้ทั้ง เครื่องคิดเงิน ร้านค้า ระบบ POS ร้านอาหาร",
   alternates: {
-    canonical: `https://www.sunmith.com`,
+    canonical: `https://sunmith-ek4h.vercel.app/`,
     languages: {
       en: "en-US",
+      th: "th-th",
     },
   },
 };

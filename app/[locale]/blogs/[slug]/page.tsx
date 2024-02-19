@@ -8,29 +8,40 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 import { PostType } from "@/types";
 import BlockContent from "@sanity/block-content-to-react";
+import { Metadata } from "next";
+
+interface Props {
+  params: { slug: string };
+}
 
 export const revalidate = 30; // revalidate at most 30 seconds
 
-export default async function BlogDetails({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const data: PostType = await getBlogDetails(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post: PostType = await getBlogDetails(params.slug);
+  if (!post)
+    return {
+      title: "Not Found",
+      description: "The page is not found",
+    };
 
+  return {
+    title: post.title,
+    description: post.description,
+    alternates: {
+      canonical: `/blogs/${post.currentSlug}`,
+      languages: {
+        "en-CA": `en-CA/blogs/${post.currentSlug}`,
+      },
+    },
+  };
+}
+
+export default async function BlogDetails({ params }: Props) {
+  const data: PostType = await getBlogDetails(params.slug);
+  console.log(data.currentSlug);
   return (
     <div className="  min-h-screen bg-white">
-      <div className="  container xl:max-w-[800px] ">
-        <div className=" py-4 ">
-          <span
-            style={{
-              background: "rgba(244, 0, 16, 0.05)",
-            }}
-            className=" bg-[]  capitalize px-3 py-2 border border-red/20 text-sm font-medium"
-          >
-            {data?.category.title}
-          </span>
-        </div>
+      <div className="  container xl:max-w-[900px] ">
         <h2 className=" py-5">{data.title}</h2>
         <div className="flex pt-6 items-center gap-6">
           {data.author && (
@@ -39,7 +50,6 @@ export default async function BlogDetails({
                 <AvatarImage src={urlForImage(data.author.image)} />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-
               <p className=" capitalize text-sm xl:text-base font-medium text-neutral-500">
                 {data.author.name}
               </p>

@@ -5,10 +5,29 @@ import OurProducts from "@/components/Landing/OurProducts";
 import OurServices from "@/components/Landing/OurServices";
 import Products from "@/components/Landing/Products";
 import Services from "@/components/Landing/Services";
+import MainHeader from "@/components/layout/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sunmith.com"),
+  title: {
+    default: "เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน",
+    template: `%s | เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน`,
+  },
+  description:
+    "SUNMITH เครื่องคิดเงิน POS หลายรุ่นให้เลือกใช้ตามความเหมาะสมของหน้าร้าน เป็นได้ทั้ง เครื่องคิดเงิน ร้านค้า ระบบ POS ร้านอาหาร",
+  alternates: {
+    canonical: `https://www.sunmith.com`,
+    languages: {
+      en: "en-US",
+    },
+  },
+};
 
 export default function Home() {
   return (
     <>
+      <MainHeader />
       <Hero />
       <Categorys />
       <OurProducts />

@@ -4,9 +4,9 @@ export default async function getAllBlogs() {
   const query = `
     *[_type == 'post'] | order(_createdAt desc) {
       title,
-      
         "currentSlug": slug.current,
         mainImage,
+        description,
          publishedAt,
          category-> {
           title

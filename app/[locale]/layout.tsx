@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { notFound } from "next/navigation";
 
+import { Metadata } from "next";
 import { useLocale } from "next-intl";
 import {
   Noto_Sans_Thai as FontSans,
@@ -27,6 +28,18 @@ const robotoFont = Roboto({
   weight: ["300", "400", "500", "700"],
 });
 
+export const metadata: Metadata = {
+  title: {
+    default: "เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน",
+    template: `%s | เครื่องคิดเงิน POS l SUNMITH พร้อมโปรแกรมขายหน้าร้าน`,
+  },
+  description:
+    "SUNMITH เครื่องคิดเงิน POS หลายรุ่นให้เลือกใช้ตามความเหมาะสมของหน้าร้าน เป็นได้ทั้ง เครื่องคิดเงิน ร้านค้า ระบบ POS ร้านอาหาร",
+  verification: {
+    google:
+      "google-site-verification=gfhLH8SIZqE4f0eVC8AX_IrSG2uL4UNK6YroEVIQ5rk",
+  },
+};
 export default async function RootLayout({
   children,
   params: { locale },

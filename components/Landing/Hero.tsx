@@ -23,7 +23,7 @@ export default function Hero() {
   ];
 
   return (
-    <>
+    <div className="">
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -114,6 +114,6 @@ export default function Hero() {
           </div>
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

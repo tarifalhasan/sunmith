@@ -5,13 +5,15 @@ export interface IBlogCardType {
   publishedAt: string;
   currentSlug: string;
   categorie?: string;
+  description: string;
 }
 
 export interface PostType {
   _id: string;
   _type: string;
   title: string;
-  slug: string;
+  currentSlug: string;
+  description: string;
   author: any;
   mainImage: any;
   body: any;

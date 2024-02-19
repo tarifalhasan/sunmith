@@ -63,8 +63,8 @@ const MainHeader = () => {
         className={cn(
           !header || nav
             ? " bg-transparent py-4 shadow-none  "
-            : " shadow-none border-b backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6] border-neutral-200 border-white/[0.1] ",
-          "  top-0 w-full mx-auto z-[9999] fixed py-5  transition-all duration-300 h-[81px] ",
+            : " shadow-none backdrop-blur-sm bg-white/[0.8] dark:bg-black/[0.6]  ",
+          "  top-0 border-b  w-full mx-auto z-[9999] fixed py-5  transition-all duration-300 h-[81px]  border-neutral-200 ",
           nav && "bg-white/[0.9]"
         )}
       >

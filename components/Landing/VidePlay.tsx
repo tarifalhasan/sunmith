@@ -9,13 +9,13 @@ import { Button } from "../ui/button";
 const VidePlay = () => {
   const local = useLocale();
   const [openVideo, setOpenVideo] = useState(false);
-  const videoRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (openVideo) {
-      videoRef.current.play();
+      videoRef.current?.play();
     } else {
-      videoRef.current.pause();
+      videoRef.current?.pause();
     }
   }, [openVideo]);
 

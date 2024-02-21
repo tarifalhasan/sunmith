@@ -24,6 +24,17 @@ export default function CartsItems() {
 
   const { cart, deleteItemFromCart } = cartContext;
 
+  const getCartLengthGroup = (length: number): string => {
+    if (length < 10) {
+      // Pad the number with leading zero if it's less than 10
+      return `0${length}`;
+    } else {
+      // Use the original length for double-digit numbers
+      return `${length}`;
+    }
+  };
+
+  const cartLengthGroup = getCartLengthGroup(cart?.length || 0);
   return (
     <>
       <Sheet>
@@ -31,7 +42,7 @@ export default function CartsItems() {
           <button className=" relative ">
             <MdShoppingCart className=" w-7 h-7 text-primary" />
             <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px] font-roboto font-medium  text-skin-status-600 justify-center -top-1">
-              {cart?.length}
+              {cartLengthGroup}
             </span>
           </button>
         </SheetTrigger>

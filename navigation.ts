@@ -18,7 +18,7 @@ export const pathnames = {
   // specify each external path per locale.
   "/about": {
     en: "/about",
-    th: "/ueber-uns",
+    th: "/bn",
   },
 
   // Dynamic params are supported via square brackets

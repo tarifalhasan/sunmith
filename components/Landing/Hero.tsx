@@ -1,6 +1,6 @@
 "use client";
 
-import { BiChevronRight } from "react-icons/bi";
+import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,12 +9,25 @@ import "swiper/css/effect-fade";
 
 import "swiper/css/pagination";
 
-import hero_image_1 from "@/public/images/hero/1.webp";
-import hero_image_2 from "@/public/images/hero/2.jpg";
-import hero_image_3 from "@/public/images/hero/3.png";
-import Image from "next/image";
+import Link from "next/link";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 export default function Hero() {
+  const data = [
+    {
+      mobile: "https://pic.cdn.sunmi.com/IMG/1705209607509465a36f077c5f5.jpg",
+      desktop: "https://pic.cdn.sunmi.com/IMG/1705209506960065a36ea2ea5f9.jpg",
+    },
+    {
+      mobile: "https://pic.cdn.sunmi.com/IMG/1705209665482665a36f4175d03.jpg",
+      desktop: "https://pic.cdn.sunmi.com/IMG/1705209656629465a36f3899ab4.jpg",
+    },
+    {
+      mobile: "https://pic.cdn.sunmi.com/IMG/1705210796367665a373ac59bec.jpg",
+      desktop: "https://pic.cdn.sunmi.com/IMG/1705210756094165a3738416fc3.jpg",
+    },
+  ];
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   return (
     <div className="">
       <Swiper
@@ -31,87 +44,23 @@ export default function Hero() {
         modules={[EffectFade, Pagination, Autoplay]}
         className="heroSwiper"
       >
-        <SwiperSlide>
-          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat">
-            <Image
-              src={hero_image_1}
-              fill
-              quality={80}
-              className=" absolute left-0 w-full right-0"
-              alt="sunmit home hero image 1"
-            />
-            <div className=" container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
-              <div className="container absolute  top-1/2 -translate-y-1/2  mx-auto  px-4 w-full left-0 ">
-                <div className="xl:space-y-7 space-y-3">
-                  <h2 className="font-bold text-center font-sans lg:text-left text-2xl sm:text-4xl xl:text-5xl text-white">
-                    SUNMI hyper Wi-Fi
-                  </h2>
-                  <p className="max-w-[542px] text-white mx-auto lg:mx-0 font-sans text-lg text-center lg:text-left xl:text-xl  font-normal">
-                    Stay connected wherever your business{" "}
-                    <br className=" hidden xl:block" /> takes you
-                  </p>
-                  <div className="flex text-white justify-center lg:justify-start">
-                    <button
-                      aria-label="learn_more"
-                      className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none"
-                    >
-                      <span>Learn More</span>{" "}
-                      <BiChevronRight className=" w-7 h-7" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] bg-contain block m-0   bg-no-repeat">
-            <Image
-              src={hero_image_2}
-              fill
-              className=" absolute left-0 w-full right-0"
-              alt="sunmit home hero image 2"
-            />
-            <div className="container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
-              <div className="container   absolute top-1/2 -translate-y-1/2 mx-auto  px-4 w-full left-0 ">
-                <div className=" space-y-2 xl:space-y-6">
-                  <p className="max-w-[542px] text-white mx-auto lg:mx-0 font-sans text-lg text-center lg:text-left xl:text-xl  font-normal">
-                    Smart Desktop Terminal
-                  </p>
-                  <h2 className="font-bold text-center font-sans lg:text-left text-2xl sm:text-4xl xl:text-5xl text-primary">
-                    SUNMI D3 MINI
-                  </h2>
-                  <p className="max-w-[542px] text-white mx-auto lg:mx-0 font-sans text-lg text-center lg:text-left xl:text-xl  font-normal">
-                    Compact,loaded with features.
-                  </p>
-                  <div className="flex text-white justify-center lg:justify-start">
-                    <button
-                      aria-label="learn_more_2"
-                      className=" inline-flex items-center  hover:gap-1 transition-all duration-300 hover:text-primary outline-none focus:outline-none"
-                    >
-                      <span>Learn More</span>{" "}
-                      <BiChevronRight className=" w-7 h-7" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="  relative overflow-hidden min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px] block m-0   bg-no-repeat">
-            <Image
-              src={hero_image_3}
-              fill
-              className=" absolute left-0 w-full right-0"
-              alt="sunmit home hero image 3"
-              quality={80}
-            />
-            <div className="container relative w-full h-full min-h-[450px] lg:min-h-[300px] xl:min-h-[350px] 2xl:min-h-[550px]">
-              <div className="container  mb-6  absolute top-1/2 -translate-y-1/2 mx-auto py-28 md:py-[9rem] px-4 w-full left-0 "></div>
-            </div>
-          </div>
-        </SwiperSlide>
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
+            <Link href={"/"}>
+              <div
+                className=" bg-cover flex  flex-col"
+                style={{
+                  backgroundImage: `url(${
+                    isMobile ? item.mobile : item.desktop
+                  })`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  height: isMobile ? "625px" : "700px",
+                }}
+              ></div>
+            </Link>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

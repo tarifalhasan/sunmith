@@ -23,6 +23,8 @@ const config = {
       backgroundImage: {
         b2b: "url('/images/b2b_bg.png')",
         p_bg_lg: "url('/images/product_bg_lg.png')",
+        phm: "url('/images/products/mobile_hero_.jpg')",
+        pdesk: "url('/images/products/desk_hero_.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,6 +1,5 @@
 "use client";
 
-import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -14,19 +13,18 @@ import { Autoplay, EffectFade, Pagination } from "swiper/modules";
 export default function Hero() {
   const data = [
     {
-      mobile: "https://pic.cdn.sunmi.com/IMG/1705209607509465a36f077c5f5.jpg",
-      desktop: "https://pic.cdn.sunmi.com/IMG/1705209506960065a36ea2ea5f9.jpg",
+      mobile: "/images/hero/new/1m.webp",
+      desktop: "/images/hero/new/1d.webp",
     },
     {
-      mobile: "https://pic.cdn.sunmi.com/IMG/1705209665482665a36f4175d03.jpg",
-      desktop: "https://pic.cdn.sunmi.com/IMG/1705209656629465a36f3899ab4.jpg",
+      mobile: "/images/hero/new/2m.webp",
+      desktop: "/images/hero/new/2d.webp",
     },
     {
-      mobile: "https://pic.cdn.sunmi.com/IMG/1705210796367665a373ac59bec.jpg",
-      desktop: "https://pic.cdn.sunmi.com/IMG/1705210756094165a3738416fc3.jpg",
+      mobile: "/images/hero/new/3m.webp",
+      desktop: "/images/hero/new/3d.webp",
     },
   ];
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
     <div className="">

@@ -1,10 +1,8 @@
 "use client";
 
-import { useLocale } from "next-intl";
 import { useEffect, useRef } from "react";
 
 const VidePlay = () => {
-  const local = useLocale();
   const videoEl = useRef<HTMLVideoElement | null>(null);
 
   const attemptPlay = () => {

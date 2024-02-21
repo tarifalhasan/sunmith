@@ -48,14 +48,21 @@ export default function Hero() {
           <SwiperSlide key={index}>
             <Link href={"/"}>
               <div
-                className=" bg-cover flex  flex-col"
+                className=" bg-cover   sm:hidden flex  flex-col"
                 style={{
-                  backgroundImage: `url(${
-                    isMobile ? item.mobile : item.desktop
-                  })`,
+                  backgroundImage: `url(${item.mobile})`,
                   backgroundPosition: "center",
                   backgroundSize: "cover",
-                  height: isMobile ? "625px" : "700px",
+                  height: "625px",
+                }}
+              ></div>
+              <div
+                className=" bg-cover  sm:flex  hidden  flex-col"
+                style={{
+                  backgroundImage: `url(${item.desktop})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  height: "700px",
                 }}
               ></div>
             </Link>

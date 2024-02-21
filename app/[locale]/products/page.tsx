@@ -1,3 +1,4 @@
+import CartButton from "@/components/common/CartButton";
 import ProductsHero from "@/components/pages/products/ProductHero";
 import { dummyProductsData } from "@/data/products";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import Link from "next/link";
 
 const ProductsPage = () => {
   return (
-    <section className=" pb-10">
+    <section className=" pb-10 space-y-5 lg:space-y-8">
       {dummyProductsData.map((item, index) => (
         <div key={index}>
           <div className=" mx-auto">
@@ -33,42 +34,54 @@ const ProductsPage = () => {
                 </div>
                 <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
                   {series.products.map((product, index) => (
-                    <Link
-                      href={`/products/${product.slug}`}
+                    <div
                       style={{
                         background: "rgb(240, 240, 240)",
                       }}
                       key={product.slug}
                       className=" py-6"
                     >
-                      <div className=" h-[260px]  relative overflow-hidden">
-                        <Image
-                          className=" w-full scale-100 transition-all duration-300  hover:scale-110 h-auto block mx-auto "
-                          height={100}
-                          width={260}
-                          quality={80}
-                          src={product.feturesImage}
-                          alt={product.title}
-                        />
-                      </div>
-                      <div className="   text-center">
-                        <div>
-                          <span className=" text-xl font-roboto font-bold">
-                            {product.name}
-                          </span>
+                      <div>
+                        <div className="flex items-center justify-end pr-4">
+                          <CartButton
+                            name={product.name}
+                            price={product.price}
+                            feturesImage={product.feturesImage}
+                            slug={product.slug}
+                            title=""
+                          />
                         </div>
-                        <div>
-                          <span
-                            className=" text-base font-roboto font-normal"
-                            style={{
-                              color: "rgb(102, 102, 102)",
-                            }}
-                          >
-                            {product.title}
-                          </span>
-                        </div>
+                        <Link href={`/products/${product.slug}`}>
+                          <div className=" h-[260px]  relative overflow-hidden">
+                            <Image
+                              className=" w-full scale-100 transition-all duration-300  hover:scale-110 h-auto block mx-auto "
+                              height={100}
+                              width={260}
+                              quality={80}
+                              src={product.feturesImage}
+                              alt={product.title}
+                            />
+                          </div>
+                          <div className="   text-center">
+                            <div>
+                              <span className=" text-xl font-roboto font-bold">
+                                {product.name}
+                              </span>
+                            </div>
+                            <div>
+                              <span
+                                className=" text-base font-roboto font-normal"
+                                style={{
+                                  color: "rgb(102, 102, 102)",
+                                }}
+                              >
+                                {product.title}
+                              </span>
+                            </div>
+                          </div>
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>

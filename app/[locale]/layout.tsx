@@ -2,9 +2,6 @@ import Footer from "@/components/layout/Footer";
 import MainHeader from "@/components/layout/Header";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { notFound } from "next/navigation";
-import NextTopLoader from "nextjs-toploader";
-
 import { Metadata } from "next";
 import { useLocale } from "next-intl";
 import {
@@ -12,6 +9,9 @@ import {
   Noto_Sans,
   Roboto,
 } from "next/font/google";
+import { notFound } from "next/navigation";
+import NextTopLoader from "nextjs-toploader";
+import { GlobalProvider } from "./GlobalProvider";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -68,11 +68,14 @@ export default async function RootLayout({
           pointerEvents: "inherit",
         }}
       >
-        <NextTopLoader color="#FF0000" zIndex={1600} />
-
-        <MainHeader />
-        <main className=" pt-[81px]">{children}</main>
-        <Footer />
+        <GlobalProvider>
+          <>
+            <NextTopLoader color="#FF0000" zIndex={1600} />
+            <MainHeader />
+            <main className=" pt-[81px]">{children}</main>
+            <Footer />
+          </>
+        </GlobalProvider>
       </body>
     </html>
   );

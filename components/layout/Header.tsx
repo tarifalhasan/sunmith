@@ -6,13 +6,29 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose, IoNotifications } from "react-icons/io5";
-import { MdShoppingCart } from "react-icons/md";
 import LocaleSwitcher from "../common/LandguageSwicher";
+import CartsItems from "../pages/products/Cart";
 import SearchBar from "../ui/searchbar";
 
 const MainHeader = () => {
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setHeader(true);
+      } else {
+        setHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   const Links = [
     {
@@ -40,22 +56,6 @@ const MainHeader = () => {
       href: "/contact_us",
     },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setHeader(true);
-      } else {
-        setHeader(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
 
   return (
     <header className=" relative w-full overflow-hidden">
@@ -103,12 +103,8 @@ const MainHeader = () => {
             <div className="hidden xl:inline-flex items-center gap-5">
               <div className=" inline-flex items-center gap-x-5 ">
                 <SearchBar />
-                <button className=" relative ">
-                  <MdShoppingCart className=" w-7 h-7 text-primary" />
-                  <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px] font-roboto font-medium  text-skin-status-600 justify-center -top-1">
-                    01
-                  </span>
-                </button>
+
+                <CartsItems />
                 <button className=" relative ">
                   <IoNotifications className=" w-7 h-7 text-primary" />
                   <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center  font-roboto font-medium text-[10px] text-skin-status-600  justify-center -top-1">
@@ -147,6 +143,7 @@ const MainHeader = () => {
                     "relative text-base font-medium  text-skin-neutral-600 dark:text-white/95 "
                   )}
                   key={index}
+                  onClick={() => setNav(false)}
                 >
                   <Link href={link.href}>{link.label}</Link>
                 </li>
@@ -155,12 +152,7 @@ const MainHeader = () => {
                 <div className=" xl:hidden flex flex-col items-center gap-5">
                   <div className=" inline-flex items-center gap-x-5 ">
                     <SearchBar />
-                    <button aria-label="add to cart" className=" relative ">
-                      <MdShoppingCart className=" w-7 h-7 text-primary" />
-                      <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px]  text-skin-status-600  justify-center font-medium font-roboto -top-1">
-                        01
-                      </span>
-                    </button>
+                    <CartsItems />
                     <button aria-label="notifation" className=" relative ">
                       <IoNotifications className=" w-7 h-7 text-primary" />
                       <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px] text-skin-status-600 font-roboto font-medium justify-center -top-1">

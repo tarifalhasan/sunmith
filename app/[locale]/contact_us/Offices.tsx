@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+import branchLocation from "@/data/branchLocation.json";
 const Offices = () => {
   const officesdata = [
     {
@@ -76,6 +75,8 @@ const Offices = () => {
       ],
     },
   ];
+
+  console.log(branchLocation);
   return (
     <div className=" bg-white  py-10 ">
       {/* main office */}
@@ -83,7 +84,7 @@ const Offices = () => {
         <h2 className="text-center text-2xl font-nato_sans font-bold lg:text-5xl">
           Offices
         </h2>
-        <div>
+        {/* <div>
           <Image
             src={"/images/Pic.07a4c73c.png"}
             width={1200}
@@ -92,28 +93,31 @@ const Offices = () => {
             quality={80}
             className=" w-full h-auto"
           />
-        </div>
-        <div className=" pb-7 border-b border-black/20 flex flex-col lg:flex-row justify-between lg:items-center gap-4 ">
-          <OfficeCard
-            name="Shanghai | SUNMI Head Office"
-            address={[
-              "Building 7, No. 388, Songhu Rd,",
-              "Yangpu District, Shanghai (200433)",
-            ]}
-          />
-          <div>
-            <p className=" text-sm  sm:text-base font-medium font-roboto">
-              press@sunmi.com
-            </p>
-            <p className=" text-xs sm:text-sm text-slate-400 font-roboto font-normal">
-              Press or media related inqueries.
-            </p>
-          </div>
-        </div>
-        <div className="   grid sm:grid-cols-2 xl:grid-cols-3  xl:gap-0 ">
-          {officesdata.map((offices, index) => (
-            <div className="py-10 border-b border-black/20" key={index}>
-              <OfficeCard name={offices.name} address={offices.address} />
+        </div> */}
+
+        <div className=" grid sm:grid-cols-2 gap-12 xl:grid-cols-3">
+          {branchLocation.BRANCH.map((item, index) => (
+            <div className=" bg-gray-50 p-4" key={index}>
+              <div className=" h-[150px]">
+                <h2 className="   lowercase text-xl text-[#303541] font-medium font-roboto">
+                  {item.name}
+                </h2>
+                <div>
+                  <p className=" text-base py-2 font-semibold text-primary">
+                    {item.phone}
+                  </p>
+                </div>
+                <p className=" text-base text-black/60 font-roboto font-medium">
+                  {item.address}
+                </p>
+              </div>
+              <div>
+                <img
+                  className=" scale-100 transition-all cursor-pointer duration-500 hover:scale-105"
+                  src={item.office_image}
+                  alt={item.name}
+                />
+              </div>
             </div>
           ))}
         </div>

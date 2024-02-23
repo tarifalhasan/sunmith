@@ -70,7 +70,18 @@ export default async function RootLayout({
       >
         <GlobalProvider>
           <>
-            <NextTopLoader color="#FF0000" zIndex={1600} />
+            <NextTopLoader
+              initialPosition={0.08}
+              crawlSpeed={200}
+              height={4}
+              crawl={true}
+              showSpinner={true}
+              easing="ease"
+              speed={50}
+              zIndex={1600}
+              showAtBottom={false}
+              color="hsl(25, 100%, 50%)"
+            />
             <MainHeader />
             <main className=" pt-[81px]">{children}</main>
             <Footer />

@@ -56,16 +56,15 @@ export default function CartsItems() {
                 <ul role="list" className="-my-6 divide-y divide-gray-200">
                   {cart?.map((product, index) => (
                     <li key={product.slug + index} className="flex py-6">
-                      <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                      <div className="h-24 w-24 flex justify-center items-center flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                         <Image
                           src={product.image}
                           alt={product.name}
                           width={96}
                           height={96}
-                          className="h-full w-full object-cover object-center"
+                          className="w-[56px] block mx-auto  h-auto  object-cover object-center"
                         />
                       </div>
-
                       <div className="ml-4 flex flex-1 flex-col">
                         <div>
                           <div className="flex justify-between text-base font-medium text-gray-900">

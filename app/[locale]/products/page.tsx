@@ -20,15 +20,18 @@ interface series {
   _id: string;
   seriesTitle: string;
   Description: string;
-  products: products[];
+  products: Iproduct[];
 }
 
-interface products {
+export interface Iproduct {
   _id: string;
   productTitle: string;
   price: number;
-  featuresImage: any;
-  curentSlug: string;
+  mainImage: {
+    asset: any;
+    alt: string;
+  };
+  currentSlug: string;
   subTitle: string;
 }
 const ProductsPage = async () => {
@@ -62,55 +65,37 @@ const ProductsPage = async () => {
                     </span>
                   </div>
                 </div>
-                <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
                   {series.products.map((product, index) => (
-                    <div
-                      style={{
-                        background: "rgb(240, 240, 240)",
-                      }}
-                      key={product._id}
-                      className=" py-6"
-                    >
-                      <div>
-                        <div className="flex items-center justify-end pr-4">
-                          <CartButton
-                            name={product.productTitle}
-                            price={product.price}
-                            feturesImage={urlForImage(product.featuresImage)}
-                            slug={product.curentSlug}
-                            title=""
+                    <div key={product._id}>
+                      <section className="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+                        <Link href={`/products/${product.currentSlug}`}>
+                          <Image
+                            className=" scale-100 transition-all duration-300  hover:scale-110  w-[6rem] h-auto block mx-auto "
+                            height={100}
+                            width={260}
+                            quality={80}
+                            src={urlForImage(product.mainImage.asset)}
+                            alt={product.mainImage.alt}
                           />
-                        </div>
-                        <Link href={`/products/${product.curentSlug}`}>
-                          <div className=" h-[260px]  relative overflow-hidden">
-                            <Image
-                              className=" w-full scale-100 transition-all duration-300  hover:scale-110 h-auto block mx-auto "
-                              height={100}
-                              width={260}
-                              quality={80}
-                              src={urlForImage(product.featuresImage)}
-                              alt={product.productTitle}
-                            />
-                          </div>
-                          <div className="   text-center">
-                            <div>
-                              <span className=" text-xl font-roboto font-bold">
-                                {product.productTitle}
-                              </span>
-                            </div>
-                            <div>
-                              <span
-                                className=" text-base font-roboto font-normal"
-                                style={{
-                                  color: "rgb(102, 102, 102)",
-                                }}
-                              >
-                                {product.subTitle}
-                              </span>
-                            </div>
-                          </div>
                         </Link>
-                      </div>
+                        <Link href={`/products/${product.currentSlug}`}>
+                          <h2 className="text-3xl my-5">
+                            {product.productTitle}
+                          </h2>
+                          <p className="mb-2">{product.subTitle}</p>
+                          <h3 className="font-semibold mb-3">
+                            ${product.price}
+                          </h3>
+                        </Link>
+                        <CartButton
+                          name={product.productTitle}
+                          price={product.price}
+                          feturesImage={urlForImage(product.mainImage.asset)}
+                          slug={product.currentSlug}
+                          title=""
+                        />
+                      </section>
                     </div>
                   ))}
                 </div>

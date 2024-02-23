@@ -6,21 +6,33 @@ export default defineType({
   type: "document",
   fields: [
     defineField({
-      name: "featuresImage",
-      title: "Features Image",
+      name: "mainImage",
+      title: "Main Image",
       type: "image",
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
     }),
     defineField({
       name: "productTitle",
-      title: "Product Title",
+      title: "Product Name",
       type: "string",
     }),
     defineField({
       name: "subTitle",
       title: "Sub Title",
+      type: "string",
+    }),
+    defineField({
+      name: "description",
+      title: "Description",
       type: "string",
     }),
     defineField({
@@ -36,6 +48,16 @@ export default defineType({
         source: "productTitle",
         maxLength: 96,
       },
+    }),
+    defineField({
+      name: "gallery",
+      type: "gallery",
+      title: "Gallery",
+    }),
+    defineField({
+      name: "body",
+      title: "Body",
+      type: "blockContent",
     }),
   ],
 });

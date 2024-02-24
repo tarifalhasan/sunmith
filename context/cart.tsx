@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, createContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export interface ICartItem {
   name: string;
@@ -75,8 +76,10 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
     if (isItemExist) {
       newCartItems = cart.map((i) => (i.slug === isItemExist.slug ? item : i));
+      toast.error("Product already added");
     } else {
       newCartItems = [...cart, item];
+      toast.success("Product added");
     }
 
     localStorage.setItem("cart", JSON.stringify({ cartItems: newCartItems }));

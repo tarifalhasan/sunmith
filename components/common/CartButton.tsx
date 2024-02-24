@@ -3,6 +3,7 @@
 import CartContext, { CartContextProps } from "@/context/cart";
 import { IProductItem } from "@/interfaces/product";
 import { FC, useContext } from "react";
+import { FaCartPlus } from "react-icons/fa";
 import { Button } from "../ui/button";
 
 const CartButton: FC<IProductItem> = ({
@@ -19,16 +20,21 @@ const CartButton: FC<IProductItem> = ({
     return null;
   }
 
+  const handleAddToCart = async () => {
+    try {
+      // Make an HTTP request to your server or API to add the product to the cart
+      // await axios.post('/api/add-to-cart', { name, price, slug, image: featuresImage });
+      addItemToCart({ name, price, slug, image: feturesImage });
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
+  };
+
   const { addItemToCart } = cartContext;
   return (
     <>
-      <Button
-        onClick={() =>
-          addItemToCart({ name, price, slug, image: feturesImage })
-        }
-        className="bg-primary"
-      >
-        Add to Cart
+      <Button onClick={handleAddToCart} className="bg-primary">
+        <FaCartPlus className=" mr-2" size={18} /> Add to Cart
       </Button>
     </>
   );

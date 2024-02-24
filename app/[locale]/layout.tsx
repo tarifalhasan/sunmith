@@ -1,6 +1,9 @@
 import Footer from "@/components/layout/Footer";
 import MainHeader from "@/components/layout/Header";
+
 import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
+
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { useLocale } from "next-intl";
@@ -82,8 +85,13 @@ export default async function RootLayout({
               showAtBottom={false}
               color="hsl(25, 100%, 50%)"
             />
+
+            <Toaster />
+
             <MainHeader />
+
             <main className=" pt-[81px]">{children}</main>
+            <Toaster />
             <Footer />
           </>
         </GlobalProvider>

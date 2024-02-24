@@ -27,7 +27,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "sanity/schemas/carouselItem/index.js"
+    "sanity/schemas/carouselItem/index.js",
+    "app/[locale]/pay/page.jsx",
+    "utils/api.js"
   ],
   "exclude": ["node_modules"]
 }

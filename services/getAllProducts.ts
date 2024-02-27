@@ -19,9 +19,7 @@ export default async function getAllProducts() {
         'currentSlug': slug.current
       }
     },
-  }
-  
-  `;
+  } `;
   const data = await client.fetch(query);
 
   return data;

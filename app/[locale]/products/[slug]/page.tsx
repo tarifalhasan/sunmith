@@ -7,7 +7,6 @@ import { Iproduct } from "../page";
 const ProductsDetails = async ({ params }: { params: { slug: string } }) => {
   const data: Iproduct = await getSingleProduct(params.slug);
 
-  console.log(data);
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
@@ -35,8 +34,8 @@ const ProductsDetails = async ({ params }: { params: { slug: string } }) => {
               </span>
               <div className="flex items-center gap-2">
                 <CartButton
-                  name={data.productTitle}
-                  price={data.price}
+                  name={data?.productTitle}
+                  price={data?.price}
                   feturesImage={urlForImage(data.mainImage.asset)}
                   slug={data.currentSlug}
                   title=""

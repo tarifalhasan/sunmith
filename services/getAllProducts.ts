@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
 
 export default async function getAllProducts() {
-  const query = `*[_type == 'products'] {
+  const query = `*[_type == 'products'] | order(_createdAt asc) {
     _id,
     category,
     description,
@@ -19,7 +19,7 @@ export default async function getAllProducts() {
         'currentSlug': slug.current
       }
     },
-  } `;
+  }`;
   const data = await client.fetch(query);
 
   return data;

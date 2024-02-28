@@ -38,7 +38,7 @@ export interface Iproduct {
 }
 const ProductsPage = async () => {
   const products: IProdcuts[] = await getAllProducts();
-
+  console.log(products);
   return (
     <section className=" pb-10 space-y-5 lg:space-y-8">
       {products.map((p, index) => (

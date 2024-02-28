@@ -34,3 +34,12 @@ Hire me [the Next.js GitHub repository](https://fiverr.com/sazuhossain124) - you
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```env
+MONGO_PASSWORD =
+MONGO_USERNAME=
+MONGO_URL=
+NEXT_PUBLIC_SANITY_PROJECT_ID=""
+NEXT_PUBLIC_SANITY_DATASET="production"
+API_URL=http://localhost:3000
+```

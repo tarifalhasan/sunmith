@@ -5,6 +5,8 @@ import getAllProducts from "@/services/getAllProducts";
 import Image from "next/image";
 import Link from "next/link";
 
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 interface IProdcuts {
   productHeroImage: {
     title: string;
@@ -40,7 +42,7 @@ const ProductsPage = async () => {
   return (
     <section className=" pb-10 space-y-5 lg:space-y-8">
       {products.map((p, index) => (
-        <div key={p._id}>
+        <div key={p._id || index}>
           <ProductsHero
             title={p.productHeroImage.title}
             description={p.productHeroImage.description}
@@ -52,7 +54,7 @@ const ProductsPage = async () => {
 
           <div>
             {p.series.map((series, index) => (
-              <div key={series._id} className=" relative container">
+              <div key={series._id || index} className=" relative container">
                 <div className=" py-5 lg:py-10">
                   <div>
                     <span className=" text-lg sm:text-2xl font-roboto font-bold text-black">
@@ -67,17 +69,31 @@ const ProductsPage = async () => {
                 </div>
                 <div className=" grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
                   {series.products.map((product, index) => (
-                    <div key={product._id}>
-                      <section className="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
-                        <Link href={`/products/${product.currentSlug}`}>
-                          <Image
-                            className=" scale-100 transition-all duration-300  hover:scale-110  w-[6rem] h-auto block mx-auto "
-                            height={100}
-                            width={260}
-                            quality={80}
-                            src={urlForImage(product.mainImage.asset)}
-                            alt={product.mainImage.alt}
-                          />
+                    <div key={product._id || index}>
+                      <div className="p-5 py-10 bg-purple-50 text-center transform duration-500 hover:-translate-y-2 cursor-pointer">
+                        <Link
+                          className=" block w-full"
+                          href={`/products/${product.currentSlug}`}
+                        >
+                          {/* <div className=" relative overflow-hidden h-[260px]">
+                            <img
+                              className=" scale-100 transition-all duration-300  hover:scale-110   h-auto block mx-auto "
+                              quality={80}
+                              src={urlForImage(product.mainImage.asset)}
+                              alt={product.mainImage.alt}
+                            />
+                          </div> */}
+                          <div className=" ">
+                            <AspectRatio ratio={4 / 4}>
+                              <Image
+                                width={260}
+                                height={200}
+                                src={urlForImage(product.mainImage.asset)}
+                                alt={product.mainImage.alt}
+                                className="rounded-md max-w-[210px]  block mx-auto object-cover"
+                              />
+                            </AspectRatio>
+                          </div>
                         </Link>
                         <Link href={`/products/${product.currentSlug}`}>
                           <h2 className="text-3xl my-5">
@@ -95,7 +111,7 @@ const ProductsPage = async () => {
                           slug={product.currentSlug}
                           title=""
                         />
-                      </section>
+                      </div>
                     </div>
                   ))}
                 </div>

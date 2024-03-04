@@ -22,7 +22,7 @@ const LocaleSwitcher = () => {
             aria-haspopup="true"
             aria-expanded="true"
           >
-            {locale === "en" ? "🇺🇸 EN" : "🇹🇭 TH"}
+            {locale === "en" ? "🇺🇸 EN" : "🇹🇭 ไทย"}
             <FiChevronDown className=" w-5 h-5" />
           </button>
         </span>
@@ -43,7 +43,7 @@ const LocaleSwitcher = () => {
               className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
               role="menuitem"
             >
-              🇺🇸 USA
+              🇺🇸 Eng
             </Link>
             <Link
               href={"/"}
@@ -52,7 +52,7 @@ const LocaleSwitcher = () => {
               className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
               role="menuitem"
             >
-              🇹🇭 Thailand
+              🇹🇭 ไทย
             </Link>
           </div>
         </div>

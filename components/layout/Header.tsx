@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
-import { IoClose, IoNotifications } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import LocaleSwitcher from "../common/LandguageSwicher";
 import CartsItems from "../pages/products/Cart";
 import SearchBar from "../ui/searchbar";
@@ -105,12 +105,6 @@ const MainHeader = () => {
                 <SearchBar />
 
                 <CartsItems />
-                <button className=" relative ">
-                  <IoNotifications className=" w-7 h-7 text-primary" />
-                  <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center  font-roboto font-medium text-[10px] text-skin-status-600  justify-center -top-1">
-                    01
-                  </span>
-                </button>
               </div>
               <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
               <div className=" inline-flex items-center gap-5">
@@ -153,12 +147,6 @@ const MainHeader = () => {
                   <div className=" inline-flex items-center gap-x-5 ">
                     <SearchBar />
                     <CartsItems />
-                    <button aria-label="notifation" className=" relative ">
-                      <IoNotifications className=" w-7 h-7 text-primary" />
-                      <span className=" w-4 h-4 rounded-full bg-white absolute right-0 flex items-center text-[10px] text-skin-status-600 font-roboto font-medium justify-center -top-1">
-                        01
-                      </span>
-                    </button>
                   </div>
                   <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
                   <div className=" inline-flex items-center gap-5">

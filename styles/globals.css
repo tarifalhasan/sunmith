@@ -101,3 +101,39 @@ body {
   overflow-x: hidden;
   padding-right: calc(0 - var(--removed-body-scroll-bar-size)) !important;
 }
+/* react pdf */
+
+.Example__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.Example__container__load {
+  margin-top: 0em;
+  color: white;
+}
+
+.Example__container__document {
+  width: 100%;
+  max-width: calc(100% - 2em);
+  /* margin: 1em 0; */
+}
+
+.Example__container__document .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Example__container__document .react-pdf__Page {
+  /* margin: 1em 0; */
+  /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); */
+}
+
+.Example__container__document .react-pdf__message {
+  padding: 20px;
+  color: white;
+}

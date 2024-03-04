@@ -59,5 +59,13 @@ export default defineType({
       title: "Body",
       type: "blockContent",
     }),
+    defineField({
+      name: "pdfFile",
+      title: "PDF File",
+      type: "file",
+      options: {
+        accept: ".pdf", // Specify the allowed file format(s)
+      },
+    }),
   ],
 });

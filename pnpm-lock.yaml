@@ -89,6 +89,9 @@ dependencies:
   nextjs-toploader:
     specifier: ^1.6.6
     version: 1.6.6(next@14.1.0)(react-dom@18.2.0)(react@18.2.0)
+  pdfjs-dist:
+    specifier: ^4.0.379
+    version: 4.0.379
   pnpm:
     specifier: ^8.15.3
     version: 8.15.4
@@ -4334,6 +4337,7 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
     dev: false
+    bundledDependencies: false
 
   /crelt@1.0.6:
     resolution: {integrity: sha512-VQ2MBenTq1fWZUH9DJNGti7kKv6EeAuYr3cLwxUWhIu1baTaXh4Ib5W2CqHVqib4/MqbYGJqiL3Zb8GJZr3l4g==}
@@ -7687,6 +7691,17 @@ packages:
 
   /pdfjs-dist@3.11.174:
     resolution: {integrity: sha512-TdTZPf1trZ8/UFu5Cx/GXB7GZM30LT+wWUNfsi6Bq8ePLnb+woNKtDymI2mxZYBpMbonNFqKmiz684DIfnd8dA==}
+    engines: {node: '>=18'}
+    optionalDependencies:
+      canvas: 2.11.2
+      path2d-polyfill: 2.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+
+  /pdfjs-dist@4.0.379:
+    resolution: {integrity: sha512-6H0Gv1nna+wmrr3CakaKlZ4rbrL8hvGIFAgg4YcoFuGC0HC4B2DVjXEGTFjJEjLlf8nYi3C3/MYRcM5bNx0elA==}
     engines: {node: '>=18'}
     optionalDependencies:
       canvas: 2.11.2

@@ -16,7 +16,7 @@ const VidePlay = () => {
   }, []);
 
   return (
-    <div className="relative my-10">
+    <div className="relative  h-[240px] md:h-auto my-10">
       <video
         style={{
           maxWidth: "100%",

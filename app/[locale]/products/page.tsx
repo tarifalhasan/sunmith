@@ -5,8 +5,6 @@ import getAllProducts from "@/services/getAllProducts";
 import Image from "next/image";
 import Link from "next/link";
 
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-
 interface IProdcuts {
   productHeroImage: {
     title: string;
@@ -83,16 +81,16 @@ const ProductsPage = async () => {
                               alt={product.mainImage.alt}
                             />
                           </div> */}
-                          <div className=" ">
-                            <AspectRatio ratio={4 / 4}>
+                          <div className="  flex justify-center w-full">
+                            <div className=" w-[10rem] h-[10rem]  flex justify-center">
                               <Image
                                 width={260}
                                 height={200}
                                 src={urlForImage(product.mainImage.asset)}
                                 alt={product.mainImage.alt}
-                                className="rounded-md max-w-[210px]  block mx-auto object-cover"
+                                className="rounded-md max-w-[210px] w-full  block mx-auto object-cover"
                               />
-                            </AspectRatio>
+                            </div>
                           </div>
                         </Link>
                         <Link href={`/products/${product.currentSlug}`}>

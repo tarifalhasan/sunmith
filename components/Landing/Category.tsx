@@ -63,7 +63,7 @@ const Categorys = () => {
                   src={data.icon}
                   alt={data.title}
                   width={85}
-                  className=" w-auto h-auto"
+                  className=" w-auto h-[110px]"
                   quality={80}
                   height={136}
                 />

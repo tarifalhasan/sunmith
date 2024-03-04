@@ -8,7 +8,7 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 
 import "pdfjs-dist/build/pdf.worker.min";
 
-// import type { PDFDocumentProxy } from "pdfjs-dist";
+import type { PDFDocumentProxy } from "pdfjs-dist";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   require("pdfjs-dist/build/pdf.worker.min.js"),
@@ -42,11 +42,11 @@ export default function Sample({ pdf }: { pdf: string }) {
 
   useResizeObserver(containerRef, resizeObserverOptions, onResize);
 
-  // function onDocumentLoadSuccess({
-  //   numPages: nextNumPages,
-  // }: PDFDocumentProxy): void {
-  //   setNumPages(nextNumPages);
-  // }
+  function onDocumentLoadSuccess({
+    numPages: nextNumPages,
+  }: PDFDocumentProxy): void {
+    setNumPages(nextNumPages);
+  }
 
   return (
     <div className="Example">
@@ -54,7 +54,7 @@ export default function Sample({ pdf }: { pdf: string }) {
         <div className="Example__container__document" ref={setContainerRef}>
           <Document
             file={file}
-            // onLoadSuccess={onDocumentLoadSuccess}
+            onLoadSuccess={onDocumentLoadSuccess}
             options={options}
           >
             {Array.from(new Array(numPages), (el, index) => (

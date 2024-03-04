@@ -23,6 +23,7 @@
     "@sanity/locale-de-de": "^1.1.0",
     "@sanity/locale-th-th": "^1.1.0",
     "@sanity/vision": "3",
+    "@wojtekmaj/react-hooks": "^1.19.0",
     "add": "^2.0.6",
     "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",

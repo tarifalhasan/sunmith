@@ -1,8 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
@@ -11,8 +13,11 @@ import CartsItems from "../pages/products/Cart";
 import SearchBar from "../ui/searchbar";
 
 const MainHeader = () => {
+  const locale = useLocale();
+
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
+  const pathName = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +33,7 @@ const MainHeader = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
   const Links = [
     {
@@ -88,16 +93,21 @@ const MainHeader = () => {
                   "  hidden xl:flex flex-col items-center w-full  xl:flex-row xl:w-max xl:gap-x-8 gap-y-5"
                 )}
               >
-                {Links.map((link, index) => (
-                  <li
-                    className={cn(
-                      "relative text-base font-medium  text-skin-neutral-600 dark:text-white/95 "
-                    )}
-                    key={index}
-                  >
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
+                {Links.map((link, index) => {
+                  return (
+                    <li
+                      className={cn(
+                        "relative text-base font-medium",
+                        pathName === `/${locale}${link.href}`
+                          ? "text-skin-status-700"
+                          : "text-skin-neutral-600 dark:text-white/95"
+                      )}
+                      key={link.href}
+                    >
+                      <Link href={link.href}>{link.label}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div className="hidden xl:inline-flex items-center gap-5">
@@ -134,10 +144,12 @@ const MainHeader = () => {
               {Links.map((link, index) => (
                 <li
                   className={cn(
-                    "relative text-base font-medium  text-skin-neutral-600 dark:text-white/95 "
+                    "relative text-base font-medium",
+                    pathName === `/${locale}${link.href}`
+                      ? "text-skin-status-700"
+                      : "text-skin-neutral-600 dark:text-white/95"
                   )}
                   key={index}
-                  onClick={() => setNav(false)}
                 >
                   <Link href={link.href}>{link.label}</Link>
                 </li>

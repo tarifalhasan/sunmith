@@ -113,7 +113,7 @@ body {
 
 .PD__container__load {
   margin-top: 0em;
-  color: white;
+  color: black;
 }
 
 .PD__container__document {
@@ -135,5 +135,5 @@ body {
 
 .PD__container__document .react-pdf__message {
   padding: 20px;
-  color: white;
+  color: black;
 }

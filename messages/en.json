@@ -48,5 +48,14 @@
     "title1": "Subject",
     "title2": "Services",
     "title3": "Follow us"
-  }
+  },
+  "brances": [
+    {
+      "name": "SUNMI TH Office",
+      "address": "10/5 Kanchanaphisek Rd, Khwaeng Prawet, Prawet, Bangkok 10250",
+      "phone": "063 986 4820",
+      "mail": "contact@sunmith.com ",
+      "office_image": "/images/brances/1.jpeg"
+    }
+  ]
 }

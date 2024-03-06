@@ -50,5 +50,14 @@
     "title1": "หัวข้อ",
     "title2": "บริการ",
     "title3": "ติดตามเรา"
-  }
+  },
+  "brances": [
+    {
+      "name": "SUNMI TH Office",
+      "address": "29/33 ถนน วิชิต ตำบล วิชิต อำเภอ เมืองภูเก็ต ภูเก็ต 83000",
+      "phone": "063 986 4820",
+      "mail": "contact@sunmith.com ",
+      "office_image": "/images/brances/1.jpeg"
+    }
+  ]
 }

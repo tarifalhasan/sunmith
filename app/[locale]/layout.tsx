@@ -1,5 +1,4 @@
 import Footer from "@/components/layout/Footer";
-import MainHeader from "@/components/layout/Header";
 
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
@@ -87,8 +86,6 @@ export default async function RootLayout({
             />
 
             <Toaster />
-
-            <MainHeader />
 
             <main className=" pt-[81px]">{children}</main>
             <Toaster />

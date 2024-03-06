@@ -6,7 +6,7 @@ import { useLocale } from "next-intl";
 
 import { useState } from "react";
 
-const LocaleSwitcher = () => {
+const LocaleSwitcher = ({ path }: { path: any }) => {
   const locale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +38,7 @@ const LocaleSwitcher = () => {
           >
             <Link
               // onClick={() => handleChange("en")}
-              href={"/"}
+              href={path}
               locale="en"
               className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
               role="menuitem"
@@ -46,7 +46,7 @@ const LocaleSwitcher = () => {
               🇺🇸 Eng
             </Link>
             <Link
-              href={"/"}
+              href={path}
               locale="th"
               // onClick={() => handleChange("th")}
               className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"

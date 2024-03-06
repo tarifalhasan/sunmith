@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <MainHeader />
+      <MainHeader path={"/"} />
       <Hero />
       <Categorys />
       <OurProducts />

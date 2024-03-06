@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
+import MainHeader from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -62,6 +63,7 @@ const Checkout = () => {
   }
   return (
     <div>
+      <MainHeader path={"/checkout"} />
       <div className=" container">
         <div className=" py-5">
           <div className=" mb-3 border-[#007cba] border rounded p-4 bg-[#f4f8ff]">

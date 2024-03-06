@@ -12,7 +12,7 @@ import LocaleSwitcher from "../common/LandguageSwicher";
 import CartsItems from "../pages/products/Cart";
 import SearchBar from "../ui/searchbar";
 
-const MainHeader = () => {
+const MainHeader = ({ path }: { path: any }) => {
   const locale = useLocale();
 
   const [header, setHeader] = useState(false);
@@ -118,7 +118,7 @@ const MainHeader = () => {
               </div>
               <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
               <div className=" inline-flex items-center gap-5">
-                <LocaleSwitcher />
+                <LocaleSwitcher path={path} />
               </div>
             </div>
             <div
@@ -162,7 +162,7 @@ const MainHeader = () => {
                   </div>
                   <div className=" w-[1px] bg-[#DAF1E9] h-[40px]"></div>
                   <div className=" inline-flex items-center gap-5">
-                    <LocaleSwitcher />
+                    <LocaleSwitcher path={path} />
                   </div>
                 </div>
               </li>

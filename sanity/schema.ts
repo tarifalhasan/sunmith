@@ -9,6 +9,7 @@ import productHeroImage from "./schemas/products/productHeroImage";
 import products from "./schemas/products/products";
 import series from "./schemas/products/series";
 import singleProduct from "./schemas/products/singleProduct";
+import shop from "./schemas/shop/shop";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     post,
@@ -20,5 +21,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     series,
     singleProduct,
     gallery,
+    shop,
   ],
 };

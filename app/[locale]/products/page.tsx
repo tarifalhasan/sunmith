@@ -1,4 +1,3 @@
-import CartButton from "@/components/common/CartButton";
 import ProductsHero from "@/components/pages/products/ProductHero";
 import { urlForImage } from "@/sanity/lib/image";
 import getAllProducts from "@/services/getAllProducts";
@@ -94,22 +93,15 @@ const ProductsPage = async () => {
                             {product.productTitle}
                           </h2>
                           <p className="mb-2">{product.subTitle}</p>
-                          <h3
+                          {/* <h3
                             style={{
                               color: "rgb(102, 102, 102)",
                             }}
                             className="font-semibold text-sm xl:text-base mb-3"
                           >
                             ${product.price}
-                          </h3>
+                          </h3> */}
                         </Link>
-                        <CartButton
-                          name={product.productTitle}
-                          price={product.price}
-                          feturesImage={urlForImage(product.mainImage.asset)}
-                          slug={product.currentSlug}
-                          title=""
-                        />
                       </div>
                     </div>
                   ))}

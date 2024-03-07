@@ -1,17 +1,18 @@
+import { urlForImage } from "@/sanity/lib/image";
 import Image from "next/image";
 import { FC } from "react";
 import { FaStar } from "react-icons/fa";
 import { Button } from "../ui/button";
 
 interface IProducts {
-  features_image: string;
+  features_image: any;
   title: string;
-  desciption: string;
-  reviews: {
+  desciption?: string;
+  reviews?: {
     total: number;
   };
   price: number;
-  discount: number;
+  discount?: number;
 }
 const ProductCard: FC<IProducts> = ({
   desciption,
@@ -30,7 +31,7 @@ const ProductCard: FC<IProducts> = ({
     >
       <div>
         <Image
-          src={features_image}
+          src={urlForImage(features_image)}
           alt={title}
           width={133}
           height={133}
@@ -60,7 +61,7 @@ const ProductCard: FC<IProducts> = ({
           </div>
           <div>
             <p className=" text-[10px] text-skin-neutral-300 font-nato_sans font-normal">
-              ขายแล้ว {reviews.total} ชิ้น
+              ขายแล้ว 100 ชิ้น
             </p>
           </div>
         </div>
@@ -107,7 +108,7 @@ const ProductCard: FC<IProducts> = ({
             className=" h-8 rounded-full"
             variant={"destructive"}
           >
-            ส่วนลด -{discount}%
+            ส่วนลด -30%
           </Button>
         </div>
       </div>

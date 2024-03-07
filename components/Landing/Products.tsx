@@ -1,18 +1,21 @@
-import { getProducts } from "@/services/products";
+import getAllBestSellingProducts from "@/services/getBestSalesProducts";
 import Image from "next/image";
 import ProductCard from "../common/ProductCard";
 
-interface IProduct {
-  image: string;
-  title: string;
-  desciption: string;
-  reviews: string[];
+export interface Iproduct {
+  _id: string;
+  productTitle: string;
   price: number;
-  discount: number;
-  id: string;
+  mainImage: {
+    asset: any;
+    alt: string;
+  };
+  currentSlug: string;
+  subTitle: string;
 }
 const Products = async () => {
-  const products = await getProducts();
+  const products = await getAllBestSellingProducts();
+  const data: Iproduct[] = products[0].shop;
 
   return (
     <div className=" py-16 container">
@@ -28,15 +31,14 @@ const Products = async () => {
       </div>
       <div className=" grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
         {products &&
-          products.map((product: IProduct, index: number) => (
+          data.map((product: any, index: number) => (
             <ProductCard
-              title={product.title}
+              title={product.productTitle}
               desciption={product.desciption}
-              discount={product.discount}
+              discount={34}
               price={product.price}
-              features_image={product.image}
-              reviews={product.reviews as any}
-              key={product.id + index}
+              features_image={product.mainImage}
+              key={product._id + index}
             />
           ))}
       </div>

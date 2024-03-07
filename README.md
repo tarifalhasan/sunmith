@@ -36,10 +36,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 set this environment variable
 
 ```env
-MONGO_PASSWORD =n5WuVqtrxyDF0HtM
-MONGO_USERNAME=tarifalhasan999
-MONGO_URL=mongodb+srv://tarifalhasan999:n5WuVqtrxyDF0HtM@sunmith.dgxo9ar.mongodb.net/
 NEXT_PUBLIC_SANITY_PROJECT_ID="146q89lk"
 NEXT_PUBLIC_SANITY_DATASET="production"
-API_URL=http://localhost:3000 // your custom domain
+API_URL=http://localhost:3000 // your custom domain name
+```
+
+```
+Developer :https://github.com/tarifalhasan/
+
 ```

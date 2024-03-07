@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import { FaLinkedin, FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   const trnslate = useTranslations("footer");
@@ -65,7 +66,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/products"}
                 >
                   Products
                 </Link>
@@ -73,7 +74,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/shop"}
                 >
                   Shop
                 </Link>
@@ -81,7 +82,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/blogs"}
                 >
                   Blogs
                 </Link>
@@ -89,7 +90,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/about_us"}
                 >
                   About us
                 </Link>
@@ -97,7 +98,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/contact_us"}
                 >
                   Contact us
                 </Link>
@@ -114,7 +115,7 @@ const Footer = () => {
               <li>
                 <Link
                   className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/products"}
                 >
                   Product
                 </Link>
@@ -138,7 +139,7 @@ const Footer = () => {
               <li>
                 <Link
                   className="hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
-                  href={"/"}
+                  href={"/contact_us"}
                 >
                   Location
                 </Link>
@@ -198,6 +199,28 @@ const Footer = () => {
                   target="_blank"
                 >
                   sunmithofficial_
+                </Link>
+              </li>
+              <li className=" inline-flex items-center gap-2">
+                <FaLinkedin size={24} />
+                <Link
+                  className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
+                  href={"https://www.linkedin.com/company/sunmith/"}
+                  target="_blank"
+                >
+                  sunmith
+                </Link>
+              </li>
+              <li className=" inline-flex items-center gap-2">
+                <FaYoutube size={24} />
+                <Link
+                  className=" hover:underline transition-colors duration-500 hover:text-primary text-base xl:text-lg font-medium font-sans text-skin-neutral-600"
+                  href={
+                    "https://www.youtube.com/channel/UCR7BK3Kd1nxyM9P9gqr2YmQ"
+                  }
+                  target="_blank"
+                >
+                  sunmith
                 </Link>
               </li>
             </ul>

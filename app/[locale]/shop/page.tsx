@@ -25,7 +25,7 @@ const Shop = async () => {
       <MainHeader path={"/shop"} />
       <div className=" container">
         <div className=" py-14 xl:py-20">
-          <h2 className=" text-lg xl:text-5xl text-center font-roboto text-skin-status-600">
+          <h2 className=" text-lg xl:text-5xl text-center font-roboto text-primary">
             Shop
           </h2>
         </div>

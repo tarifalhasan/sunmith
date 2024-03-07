@@ -5,6 +5,7 @@ import blockContent from "./schemas/blockContent";
 import category from "./schemas/category";
 import gallery from "./schemas/gallery";
 import post from "./schemas/post";
+import bestSales from "./schemas/products/bestSales";
 import productHeroImage from "./schemas/products/productHeroImage";
 import products from "./schemas/products/products";
 import series from "./schemas/products/series";
@@ -22,5 +23,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     singleProduct,
     gallery,
     shop,
+    bestSales,
   ],
 };

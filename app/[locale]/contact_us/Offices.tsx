@@ -3,7 +3,6 @@ import { useLocale } from "next-intl";
 const Offices = async () => {
   const local = useLocale(); // local return th and en value
 
-  console.log(local);
   return (
     <div className=" bg-white  py-10 ">
       {/* main office */}

@@ -23,8 +23,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import CartContext, { CartContextProps } from "@/context/cart";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import CheckoutDetails from "./CheckoutDetails";
@@ -47,15 +48,41 @@ const formSchema = z.object({
   ship_company_name: z.string().min(2).max(50).optional(),
   other_notes: z.string().min(2).max(50).optional(),
   company_name: z.string().min(2).max(50).optional(),
+  totalPrice: z.number(),
+  products: z.array(
+    z.object({
+      name: z.string(),
+      price: z.number(),
+    })
+  ),
 });
 
 const Checkout = () => {
   const [isOpenCoupon, setIsOpenCoupon] = useState(false);
+  const cartContext = useContext(CartContext) as CartContextProps | undefined;
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      phone: "",
+      email: "",
+    },
   });
 
-  // 2. Define a submit handler.
+  const [total, setTotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
+  const shippingCost = 200; // Change this value as needed
+  const [cart, setCart] = useState<{ name: string; price: number }[]>([]);
+  useEffect(() => {
+    if (cartContext) {
+      const { cart } = cartContext;
+      const newSubtotal = cart.reduce((total, item) => total + item.price, 0);
+      const newTotal = newSubtotal + shippingCost;
+      setCart(cart);
+      setSubtotal(newSubtotal);
+      setTotal(newTotal);
+    }
+  }, [cartContext]);
+
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
@@ -471,7 +498,12 @@ const Checkout = () => {
                     )}
                   />
                 </div>
-                <CheckoutDetails />
+                <CheckoutDetails
+                  cart={cart}
+                  total={total}
+                  shippingCost={shippingCost}
+                  subtotal={subtotal}
+                />
               </div>
             </form>
           </Form>

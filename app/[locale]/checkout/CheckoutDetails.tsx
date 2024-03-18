@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -7,9 +9,27 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Link from "next/link";
 
-const CheckoutDetails = () => {
+import Link from "next/link";
+import { FC } from "react";
+
+interface CheckoutDetailsProps {
+  cart: CartItem[]; // Assuming you have a CartItem type/interface
+  total: number;
+  shippingCost: number;
+  subtotal: number;
+}
+
+interface CartItem {
+  name: string;
+  price: number;
+}
+const CheckoutDetails: FC<CheckoutDetailsProps> = ({
+  cart,
+  total,
+  shippingCost,
+  subtotal,
+}) => {
   return (
     <div className=" basis-full border-2 p-4 border-slate-200 xl:basis-[45%]">
       <div>
@@ -25,23 +45,25 @@ const CheckoutDetails = () => {
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">
-                  ลิ้นชักเก็บเงิน ขนาดใหญ่ Maken Mk-420 × 1
-                </TableCell>
-                <TableCell className="text-right">฿250.00</TableCell>
-              </TableRow>
+              {cart.map((item, index) => (
+                <TableRow key={index}>
+                  <TableCell className="font-medium">{item.name}</TableCell>
+                  <TableCell className="text-right">฿{item.price}</TableCell>
+                </TableRow>
+              ))}
               <TableRow>
                 <TableCell className="font-medium">Subtotal</TableCell>
-                <TableCell className="text-right">฿1,680</TableCell>
+                <TableCell className="text-right">฿{subtotal}</TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Shipping</TableCell>
-                <TableCell className="text-right">Flat rate: ฿200</TableCell>
+                <TableCell className="text-right">
+                  Flat rate: ฿{shippingCost}
+                </TableCell>
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Total</TableCell>
-                <TableCell className="text-right">฿1,880</TableCell>
+                <TableCell className="text-right">฿{total}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

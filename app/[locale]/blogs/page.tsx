@@ -22,21 +22,19 @@ const Blogs = async () => {
         </h2>
       </div>
       <div className=" container py-10">
-        {data && (
-          <div className="grid  sm:grid-cols-2 xl:grid-cols-3 gap-6">
-            {data?.map((item, index) => (
-              <BlogCard
-                key={index}
-                mainImage={item.mainImage}
-                title={item.title}
-                publishedAt={item.publishedAt}
-                category={item.category.title}
-                currentSlug={item.currentSlug}
-                description={item.description}
-              />
-            ))}
-          </div>
-        )}
+        <div className="grid  sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          {data.map((item, index) => (
+            <BlogCard
+              key={index}
+              mainImage={item.mainImage}
+              title={item.title}
+              publishedAt={item.publishedAt}
+              category={item.category.title}
+              currentSlug={item.currentSlug}
+              description={item.description}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

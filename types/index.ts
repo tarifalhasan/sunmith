@@ -3,16 +3,17 @@ export interface IBlogCardType {
   title: string;
   category: any;
   publishedAt: string;
-  currentSlug: string;
+  // currentSlug: string;
   categorie?: string;
   description: string;
+  _id: string;
 }
 
 export interface PostType {
   _id: string;
   _type: string;
   title: string;
-  currentSlug: string;
+  // currentSlug: string;
   description: string;
   author: any;
   mainImage: any;

@@ -1,4 +1,4 @@
-import BlogCard from "@/components/BlogPage/BlogCard";
+import { Skeleton } from "@/components/ui/skeleton";
 import getAllBlogs from "@/services/getAllBlogs";
 import { IBlogCardType } from "@/types";
 import { Metadata } from "next";
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     images: "/images/SUNMI TH Care +.png",
   },
 };
+
 const Blogs = async () => {
   const data: IBlogCardType[] = await getAllBlogs();
   return (
@@ -24,15 +25,26 @@ const Blogs = async () => {
       <div className=" container py-10">
         <div className="grid  sm:grid-cols-2 xl:grid-cols-3 gap-6">
           {data.map((item, index) => (
-            <BlogCard
-              key={index}
-              mainImage={item.mainImage}
-              title={item.title}
-              publishedAt={item.publishedAt}
-              category={item.category}
-              _id={item._id}
-              description={item.description}
-            />
+            <div key={item._id} className=" w-full">
+              <>
+                <div className=" relative">
+                  <Skeleton className=" w-full h-[320px] rounded-lg" />
+                </div>
+              </>
+              <div className="pt-2 space-y-2  text-center">
+                <h2 className="text-xl font-roboto xl:text-2xl font-bold text-[#54595f]">
+                  <Skeleton className=" w-full h-[20px] rounded-lg" />
+                </h2>
+                <div>
+                  <span className="text-sm font-roboto font-normal text-[#adadad]">
+                    <Skeleton className=" w-full h-[20px] rounded-lg" />
+                  </span>
+                </div>
+                <p className="text-sm font-roboto font-normal text-[#777] xl:text-base text-center">
+                  <Skeleton className=" w-full h-[340px] rounded-lg" />
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

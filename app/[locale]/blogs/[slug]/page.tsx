@@ -28,9 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     alternates: {
-      canonical: `/blogs/${post.currentSlug}`,
+      canonical: `/blogs/${post._id}`,
       languages: {
-        "en-CA": `en-CA/blogs/${post.currentSlug}`,
+        "en-CA": `en-CA/blogs/${post._id}`,
       },
     },
   };
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogDetails({ params }: Props) {
   const data: PostType = await getBlogDetails(params.slug);
-  console.log(data.currentSlug);
+
   return (
     <div className="  min-h-screen bg-white">
       <div className="  container xl:max-w-[900px] ">

@@ -5,17 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
-const BlogCard: FC<IBlogCardType> = ({
+const BlogCard: FC<IBlogCardType> = async ({
   title,
   mainImage,
   category,
   publishedAt,
-  currentSlug,
+  _id,
   description,
 }) => {
   return (
     <div className=" w-full">
-      <Link href={`/blogs/${currentSlug}`}>
+      <Link href={`/blogs/${_id}`}>
         <div className=" relative">
           <Image
             src={urlForImage(mainImage)}
@@ -41,7 +41,7 @@ const BlogCard: FC<IBlogCardType> = ({
         </p>
         <Link
           className="  pt-1 text-primary text-lg font-roboto font-semibold"
-          href={`/blogs/${currentSlug}`}
+          href={`/blogs/${_id}`}
         >
           Load More
         </Link>

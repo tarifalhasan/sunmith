@@ -2,11 +2,10 @@ import { client } from "@/sanity/lib/client";
 
 export default async function getBlogDetails(slug: string) {
   const query = `
-  *[_type == "post" && slug.current == '${slug}'] {
-        
+  *[_type == "post" && _id == '${slug}'] {
     title,
     mainImage,
- "currentSlug": slug.current,
+    _id,
    publishedAt,
    category-> {
     title
